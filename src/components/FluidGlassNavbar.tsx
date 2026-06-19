@@ -37,13 +37,7 @@ function ArrowUpRightIcon() {
 export default function FluidGlassNavbar() {
   return (
     <nav className="fixed left-0 right-0 top-4 z-50 flex items-center justify-between px-8 lg:px-16">
-      <Link
-        aria-label="Home"
-        className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-3xl italic leading-none text-white"
-        href="/"
-      >
-        a
-      </Link>
+      <div aria-hidden="true" className="h-12 w-12" />
 
       <div className="liquid-glass hidden items-center rounded px-1.5 py-1.5 md:flex">
         {navItems.map((item) => (
