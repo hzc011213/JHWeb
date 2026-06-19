@@ -1,9 +1,7 @@
 import type { ComponentType } from "react";
 
 import DecryptedText from "@/components/DecryptedText";
-import Navbar from "@/components/Navbar";
 import TextType from "@/components/TextType";
-import ThemeToggleButton from "@/components/ThemeToggleButton";
 
 const TextTypeComponent = TextType as ComponentType<Record<string, unknown>>;
 const DecryptedTextComponent = DecryptedText as ComponentType<Record<string, unknown>>;
@@ -12,7 +10,6 @@ export default function Home() {
   return (
     <main className="home-screen relative min-h-screen overflow-hidden">
       <div aria-hidden="true" className="home-screen__scrim absolute inset-0" />
-      <Navbar />
       <section className="relative z-10 flex min-h-screen items-center justify-center px-6 text-center">
         <div className="flex flex-col items-center gap-5">
           <TextTypeComponent
@@ -37,9 +34,6 @@ export default function Home() {
           />
         </div>
       </section>
-      <div className="fixed right-8 top-4 z-60 lg:right-16">
-        <ThemeToggleButton />
-      </div>
     </main>
   );
 }

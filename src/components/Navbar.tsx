@@ -3,10 +3,9 @@ import GlassSurface from "./GlassSurface";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Voyages", href: "/voyages" },
-  { label: "Worlds", href: "/worlds" },
-  { label: "Innovation", href: "/innovation" },
-  { label: "Plan Launch", href: "/plan-launch" },
+  { label: "Product", href: "/product" },
+  { label: "Experience", href: "/experience" },
+  { label: "Personality", href: "/personality" },
 ];
 
 export default function Navbar() {
@@ -16,7 +15,7 @@ export default function Navbar() {
 
       <GlassSurface
         height={52}
-        width={560}
+        width={400}
         borderRadius={9999}
         borderWidth={0.07}
         brightness={50}
@@ -35,13 +34,6 @@ export default function Navbar() {
             {item.label}
           </Link>
         ))}
-
-        <Link
-          className="navbar-cta ml-1 flex items-center gap-2 whitespace-nowrap rounded px-3 py-2 text-sm font-medium transition"
-          href="/claim"
-        >
-          Claim a Spot
-        </Link>
       </GlassSurface>
 
       <div aria-hidden="true" className="h-12 w-12" />

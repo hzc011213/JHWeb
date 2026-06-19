@@ -3,6 +3,8 @@ import { Inter, Geist_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/ThemeProvider";
+import Navbar from "@/components/Navbar";
+import ThemeToggleButton from "@/components/ThemeToggleButton";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -34,7 +36,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <div className="fixed right-8 top-4 z-60 lg:right-16">
+            <ThemeToggleButton />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
