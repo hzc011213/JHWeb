@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 
+import BrandCarousel from "@/components/brand-carousel/BrandCarousel";
 import DecryptedText from "@/components/DecryptedText";
 import TextType from "@/components/TextType";
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <main className="home-screen relative min-h-screen overflow-hidden">
       <div aria-hidden="true" className="home-screen__scrim absolute inset-0" />
-      <section className="relative z-10 flex min-h-screen items-center justify-center px-6 text-center">
+      <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-36 text-center sm:pb-28">
         <div className="flex flex-col items-center gap-5">
           <TextTypeComponent
             as="h1"
@@ -34,6 +35,7 @@ export default function Home() {
           />
         </div>
       </section>
+      <BrandCarousel />
     </main>
   );
 }
