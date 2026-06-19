@@ -4,8 +4,15 @@ import { useScroll } from "framer-motion";
 import { useRef } from "react";
 
 import FadeIn from "./FadeIn";
-import ProjectCard from "./ProjectCard";
+import ShowCard from "./ShowCard";
+import type { ShowCardArrangement } from "./ShowCard";
 import { projects } from "./projects";
+
+const showCardArrangements: ShowCardArrangement[] = [
+  "split",
+  "feature-left",
+  "mosaic",
+];
 
 export default function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,7 +24,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-10 scroll-mt-24 rounded-t-[40px] bg-white px-5 py-20 text-black dark:bg-black dark:text-white sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:scroll-mt-32 md:rounded-t-[60px] md:px-10"
+      className="relative z-10 mt-12 scroll-mt-24 rounded-t-[40px] bg-white px-5 py-20 text-black dark:bg-black dark:text-white sm:mt-16 sm:rounded-t-[50px] sm:px-8 md:mt-20 md:scroll-mt-32 md:rounded-t-[60px] md:px-10"
     >
       <div className="mx-auto max-w-7xl">
         <FadeIn y={40}>
@@ -27,12 +34,13 @@ export default function ProjectsSection() {
         </FadeIn>
         <div ref={containerRef} className="relative pb-[30vh]">
           {projects.map((project, index) => (
-            <ProjectCard
+            <ShowCard
               key={project.name}
               project={project}
               index={index}
               totalCards={projects.length}
               progress={scrollYProgress}
+              arrangement={showCardArrangements[index % showCardArrangements.length]}
             />
           ))}
         </div>

@@ -37,8 +37,8 @@ export default function Home() {
             />
           </div>
         </section>
-        <BrandCarousel />
       </div>
+      <BrandCarousel />
       <HomeSections />
     </main>
   );

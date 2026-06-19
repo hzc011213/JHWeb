@@ -4,10 +4,7 @@
   --brand-carousel-panel: rgba(5, 5, 5, 0.58);
   --brand-carousel-edge: rgba(255, 255, 255, 0.16);
   --brand-carousel-glow: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  right: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
-  left: max(1rem, env(safe-area-inset-left));
+  position: relative;
   z-index: 20;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -23,6 +20,8 @@
     inset 0 1px 0 var(--brand-carousel-glow),
     0 18px 60px rgba(0, 0, 0, 0.2);
   color: var(--brand-carousel-fg);
+  width: min(calc(100% - 2rem), 88rem);
+  margin: clamp(1.5rem, 5vw, 4rem) auto 0;
   padding: 0.625rem 0.75rem;
   -webkit-backdrop-filter: blur(18px) saturate(125%);
   backdrop-filter: blur(18px) saturate(125%);
