@@ -81,7 +81,7 @@ export default function ThemeToggleButton({
   return (
     <button
       aria-label="Toggle theme"
-      className={`theme-toggle size-10 cursor-pointer rounded-full p-0 transition-all duration-300 active:scale-95 ${className}`}
+      className={`size-10 cursor-pointer rounded-full bg-[#050505] p-0 shadow-[0_0_0_1px_rgba(255,255,255,0.16)] transition-all duration-300 active:scale-95 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.22)] ${className}`}
       onClick={toggleTheme}
       type="button"
     >

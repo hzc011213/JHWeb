@@ -1,0 +1,23 @@
+.root {
+  background-image: url("/assets/home-background-light.png");
+  background-position: center;
+  background-size: cover;
+  color: #050505;
+  transition:
+    background-image 500ms ease,
+    color 300ms ease;
+}
+
+:global(.dark) .root {
+  background-image: url("/assets/home-background-dark.png");
+  color: #ffffff;
+}
+
+.scrim {
+  background: rgba(255, 255, 255, 0.08);
+  transition: background-color 300ms ease;
+}
+
+:global(.dark) .scrim {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -1,4 +1,4 @@
-import ProjectsSection from "./home/ProjectsSection";
+import ProjectsSection from "./ProjectsSection";
 
 export default function HomeSections() {
   return <ProjectsSection />;

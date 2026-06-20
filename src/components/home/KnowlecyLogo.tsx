@@ -1,8 +1,8 @@
-export function KnowlecyLogo() {
+export function KnowlecyLogo({ className }: { className?: string }) {
   return (
     <svg
       aria-label="Knowlecy"
-      className="brand-carousel__logo brand-carousel__logo--knowlecy"
+      className={className}
       fill="none"
       height="40"
       role="img"

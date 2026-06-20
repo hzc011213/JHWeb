@@ -1,6 +1,9 @@
 import Link from "next/link";
 
 import GlassSurface from "@/components/react-bits/GlassSurface";
+import { cn } from "@/lib/utils";
+
+import styles from "./Navbar.module.css";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -11,7 +14,12 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <nav className="navbar fixed left-0 right-0 top-4 z-50 flex items-center justify-between px-8 lg:px-16">
+    <nav
+      className={cn(
+        styles.root,
+        "fixed left-0 right-0 top-4 z-50 flex items-center justify-between px-8 lg:px-16",
+      )}
+    >
       <div aria-hidden="true" className="h-12 w-12" />
 
       <GlassSurface
@@ -24,11 +32,17 @@ export default function Navbar() {
         distortionScale={-180}
         opacity={0.93}
         saturation={1}
-        className="navbar-glass hidden items-center px-1.5 py-1.5 md:flex"
+        className={cn(
+          styles.glass,
+          "hidden items-center px-1.5 py-1.5 md:flex",
+        )}
       >
         {navItems.map((item) => (
           <Link
-            className="navbar-link rounded px-3 py-2 text-sm font-medium transition"
+            className={cn(
+              styles.link,
+              "rounded px-3 py-2 text-sm font-medium transition",
+            )}
             href={item.href}
             key={item.href}
           >

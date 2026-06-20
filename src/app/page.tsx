@@ -1,8 +1,9 @@
 import type { ComponentType } from "react";
 
-import BrandCarousel from "@/components/BrandCarousel";
+import BrandCarousel from "@/components/home/BrandCarousel";
+import HomeScreen from "@/components/home/HomeScreen";
 import DecryptedText from "@/components/react-bits/DecryptedText";
-import HomeSections from "@/components/HomeSections";
+import HomeSections from "@/components/home/HomeSections";
 import TextType from "@/components/react-bits/TextType";
 
 const TextTypeComponent = TextType as ComponentType<Record<string, unknown>>;
@@ -13,11 +14,7 @@ const DecryptedTextComponent = DecryptedText as ComponentType<
 export default function Home() {
   return (
     <main className="bg-white dark:bg-black">
-      <div className="home-screen relative min-h-screen overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="home-screen__scrim absolute inset-0"
-        />
+      <HomeScreen as="div">
         <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-36 text-center sm:pb-28">
           <div className="flex flex-col items-center gap-5">
             <TextTypeComponent
@@ -42,7 +39,7 @@ export default function Home() {
             />
           </div>
         </section>
-      </div>
+      </HomeScreen>
       <BrandCarousel />
       <HomeSections />
     </main>

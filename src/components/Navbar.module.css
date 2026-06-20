@@ -1,0 +1,31 @@
+.root {
+  --navbar-fg: #050505;
+  --navbar-muted-fg: rgba(5, 5, 5, 0.76);
+  --navbar-glass-shadow: rgba(0, 0, 0, 0.16);
+  color: var(--navbar-fg);
+}
+
+:global(.dark) .root {
+  --navbar-fg: #ffffff;
+  --navbar-muted-fg: rgba(255, 255, 255, 0.88);
+  --navbar-glass-shadow: rgba(255, 255, 255, 0.14);
+}
+
+.glass {
+  color: var(--navbar-fg);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.28),
+    inset 0 -1px 1px var(--navbar-glass-shadow);
+}
+
+.glass :global(.glass-surface__content) {
+  display: flex;
+}
+
+.link {
+  color: var(--navbar-muted-fg);
+}
+
+.link:hover {
+  color: var(--navbar-fg);
+}

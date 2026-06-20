@@ -25,6 +25,7 @@ export default function ShowCard({
   const targetScale = 1 - (totalCards - 1) * stackScaleStep;
   const rangeStart = index / totalCards;
   const rangeEnd = Math.min(1, (index + 1) / totalCards);
+  const stickyTop = `calc(clamp(6rem, 4rem + 5.333vw, 8rem) + ${index * 28}px)`;
   const scale = useTransform(
     progress,
     [rangeStart, rangeEnd],
@@ -37,7 +38,7 @@ export default function ShowCard({
         className="sticky flex h-[85vh] origin-top flex-col overflow-hidden rounded-[40px] border-2 border-black/10 bg-white p-4 text-black shadow-2xl shadow-black/10 dark:border-[#D7E2EA] dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         style={{
           scale: prefersReducedMotion ? 1 : scale,
-          top: `calc(var(--project-card-top) + ${index * 28}px)`,
+          top: stickyTop,
         }}
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">

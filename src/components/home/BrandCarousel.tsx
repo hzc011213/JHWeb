@@ -1,8 +1,17 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-import { KnowlecyLogo } from "@/components/brand/KnowlecyLogo";
+import { KnowlecyLogo } from "@/components/home/KnowlecyLogo";
 import LogoLoop, { type LogoItem } from "@/components/react-bits/LogoLoop";
+import { cn } from "@/lib/utils";
+
+import styles from "./BrandCarousel.module.css";
+
+const toneClassNames = {
+  "dark-source": styles.darkSource,
+  "light-source": styles.lightSource,
+  color: undefined,
+};
 
 function brandLogoNode(
   name: string,
@@ -14,7 +23,7 @@ function brandLogoNode(
   return (
     <Image
       alt={name}
-      className={`brand-carousel__logo brand-carousel__logo--${tone}`}
+      className={cn(styles.logo, toneClassNames[tone])}
       height={height}
       src={src}
       unoptimized
@@ -35,7 +44,7 @@ const brandLogos: LogoItem[] = [
     title: "Hyperduality",
   },
   {
-    node: <KnowlecyLogo />,
+    node: <KnowlecyLogo className={cn(styles.logo, styles.knowlecy)} />,
     title: "Knowlecy",
   },
   {
@@ -68,7 +77,12 @@ const brandLogos: LogoItem[] = [
 
 export default function BrandCarousel() {
   return (
-    <div className="brand-carousel mx-auto my-12 max-w-[min(calc(100vw-2rem),56rem)] overflow-hidden md:my-16">
+    <div
+      className={cn(
+        styles.root,
+        "mx-auto my-12 max-w-[min(calc(100vw-2rem),56rem)] overflow-hidden md:my-16",
+      )}
+    >
       <LogoLoop
         ariaLabel="Brand logos"
         fadeOut

@@ -1,0 +1,30 @@
+.root {
+  --logoloop-fadeColor: #ffffff;
+  --logoloop-hoverScale: 1.08;
+}
+
+:global(.dark) .root {
+  --logoloop-fadeColor: #050505;
+}
+
+.logo {
+  color: currentColor;
+}
+
+.knowlecy {
+  display: block;
+  height: calc(var(--logoloop-logoHeight) * 0.7);
+  width: auto;
+}
+
+.lightSource {
+  filter: invert(1);
+}
+
+:global(.dark) .lightSource {
+  filter: none;
+}
+
+:global(.dark) .darkSource {
+  filter: invert(1);
+}
