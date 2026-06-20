@@ -9,6 +9,9 @@ import { projects } from "./projects";
 
 export default function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const totalCards = projects.length;
+  const finalStackOffset = Math.max(0, totalCards - 1) * 28;
+  const stackHoldVh = Math.max(85, totalCards * 28);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -30,13 +33,19 @@ export default function ProjectsSection() {
         >
           About Me
         </ScrollFloat>
-        <div ref={containerRef} className="relative pb-[30vh]">
+        <div
+          ref={containerRef}
+          className="relative"
+          style={{
+            paddingBottom: `calc(${stackHoldVh}vh + ${finalStackOffset}px)`,
+          }}
+        >
           {projects.map((project, index) => (
             <ShowCard
               key={project.name}
               project={project}
               index={index}
-              totalCards={projects.length}
+              totalCards={totalCards}
               progress={scrollYProgress}
             />
           ))}

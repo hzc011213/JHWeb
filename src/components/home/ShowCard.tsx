@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useTransform } from "framer-motion";
-import type { MotionValue } from "framer-motion";
+import type { MotionStyle, MotionValue } from "framer-motion";
 
 import type { Project } from "./projects";
 import LiveProjectButton from "./LiveProjectButton";
@@ -22,24 +22,27 @@ export default function ShowCard({
 }: ShowCardProps) {
   const prefersReducedMotion = useReducedMotion();
   const stackScaleStep = 0.03;
-  const targetScale = 1 - (totalCards - 1) * stackScaleStep;
+  const targetScale = 1 - (totalCards - 1 - index) * stackScaleStep;
   const rangeStart = index / totalCards;
   const rangeEnd = Math.min(1, (index + 1) / totalCards);
-  const stickyTop = `calc(clamp(6rem, 4rem + 5.333vw, 8rem) + ${index * 28}px)`;
   const scale = useTransform(
     progress,
     [rangeStart, rangeEnd],
     [1, targetScale],
   );
+  const cardStyle: MotionStyle = {
+    scale: prefersReducedMotion ? 1 : scale,
+    top: `${index * 28}px`,
+  };
 
   return (
-    <div className="h-[85vh]">
+    <div
+      className="sticky top-24 h-[85vh] md:top-32"
+      style={{ zIndex: index + 1 }}
+    >
       <motion.article
-        className="sticky flex h-[85vh] origin-top flex-col overflow-hidden rounded-[40px] border-2 border-black/10 bg-white p-4 text-black shadow-2xl shadow-black/10 dark:border-[#D7E2EA] dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
-        style={{
-          scale: prefersReducedMotion ? 1 : scale,
-          top: stickyTop,
-        }}
+        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[40px] border-2 border-black/10 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform dark:border-[#D7E2EA] dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        style={cardStyle}
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">
           <span className="font-black leading-none tracking-tight text-black/88 tabular-nums text-[clamp(3.5rem,9vw,120px)] dark:text-white/92">
