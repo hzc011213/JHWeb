@@ -81,7 +81,7 @@ export default function ThemeToggleButton({
   return (
     <button
       aria-label="Toggle theme"
-      className={`size-10 cursor-pointer rounded-full bg-[#050505] p-0 shadow-[0_0_0_1px_rgba(255,255,255,0.16)] transition-all duration-300 active:scale-95 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.22)] ${className}`}
+      className={`size-10 cursor-pointer rounded-full border border-white/25 bg-white/15 p-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),inset_0_-1px_0_rgba(255,255,255,0.12),0_8px_24px_rgba(15,23,42,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 active:scale-95 dark:border-white/20 dark:bg-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(8,12,18,0.24)] ${className}`}
       onClick={toggleTheme}
       type="button"
     >
