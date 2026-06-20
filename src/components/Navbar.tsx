@@ -1,5 +1,6 @@
 import Link from "next/link";
-import GlassSurface from "./GlassSurface";
+
+import GlassSurface from "@/components/react-bits/GlassSurface";
 
 const navItems = [
   { label: "Home", href: "/" },

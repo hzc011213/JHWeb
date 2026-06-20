@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef, useId } from 'react';
-import './GlassSurface.css';
+import { useEffect, useState, useRef, useId } from "react";
+import "./GlassSurface.css";
 
 const GlassSurface = ({
   children,
@@ -19,13 +19,13 @@ const GlassSurface = ({
   redOffset = 0,
   greenOffset = 10,
   blueOffset = 20,
-  xChannel = 'R',
-  yChannel = 'G',
-  mixBlendMode = 'difference',
-  className = '',
-  style = {}
+  xChannel = "R",
+  yChannel = "G",
+  mixBlendMode = "difference",
+  className = "",
+  style = {},
 }) => {
-  const uniqueId = useId().replace(/:/g, '-');
+  const uniqueId = useId().replace(/:/g, "-");
   const filterId = `glass-filter-${uniqueId}`;
   const redGradId = `red-grad-${uniqueId}`;
   const blueGradId = `blue-grad-${uniqueId}`;
@@ -68,25 +68,26 @@ const GlassSurface = ({
   };
 
   const updateDisplacementMap = () => {
-    feImageRef.current?.setAttribute('href', generateDisplacementMap());
+    feImageRef.current?.setAttribute("href", generateDisplacementMap());
   };
 
   const supportsSVGFilters = () => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') {
+    if (typeof window === "undefined" || typeof document === "undefined") {
       return false;
     }
 
-    const isWebkit = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+    const isWebkit =
+      /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
     const isFirefox = /Firefox/.test(navigator.userAgent);
 
     if (isWebkit || isFirefox) {
       return false;
     }
 
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.style.backdropFilter = `url(#${filterId})`;
 
-    return div.style.backdropFilter !== '';
+    return div.style.backdropFilter !== "";
   };
 
   useEffect(() => {
@@ -94,16 +95,19 @@ const GlassSurface = ({
     [
       { ref: redChannelRef, offset: redOffset },
       { ref: greenChannelRef, offset: greenOffset },
-      { ref: blueChannelRef, offset: blueOffset }
+      { ref: blueChannelRef, offset: blueOffset },
     ].forEach(({ ref, offset }) => {
       if (ref.current) {
-        ref.current.setAttribute('scale', (distortionScale + offset).toString());
-        ref.current.setAttribute('xChannelSelector', xChannel);
-        ref.current.setAttribute('yChannelSelector', yChannel);
+        ref.current.setAttribute(
+          "scale",
+          (distortionScale + offset).toString(),
+        );
+        ref.current.setAttribute("xChannelSelector", xChannel);
+        ref.current.setAttribute("yChannelSelector", yChannel);
       }
     });
 
-    gaussianBlurRef.current?.setAttribute('stdDeviation', displace.toString());
+    gaussianBlurRef.current?.setAttribute("stdDeviation", displace.toString());
   }, [
     width,
     height,
@@ -119,7 +123,7 @@ const GlassSurface = ({
     blueOffset,
     xChannel,
     yChannel,
-    mixBlendMode
+    mixBlendMode,
   ]);
 
   useEffect(() => {
@@ -166,26 +170,47 @@ const GlassSurface = ({
 
   const containerStyle = {
     ...style,
-    width: typeof width === 'number' ? `${width}px` : width,
-    height: typeof height === 'number' ? `${height}px` : height,
+    width: typeof width === "number" ? `${width}px` : width,
+    height: typeof height === "number" ? `${height}px` : height,
     borderRadius: `${borderRadius}px`,
-    '--glass-frost': backgroundOpacity,
-    '--glass-saturation': saturation,
-    '--filter-id': `url(#${filterId})`
+    "--glass-frost": backgroundOpacity,
+    "--glass-saturation": saturation,
+    "--filter-id": `url(#${filterId})`,
   };
 
   return (
     <div
       ref={containerRef}
-      className={`glass-surface ${svgSupported ? 'glass-surface--svg' : 'glass-surface--fallback'} ${className}`}
+      className={`glass-surface ${svgSupported ? "glass-surface--svg" : "glass-surface--fallback"} ${className}`}
       style={containerStyle}
     >
       <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id={filterId} colorInterpolationFilters="sRGB" x="0%" y="0%" width="100%" height="100%">
-            <feImage ref={feImageRef} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />
+          <filter
+            id={filterId}
+            colorInterpolationFilters="sRGB"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+          >
+            <feImage
+              ref={feImageRef}
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="none"
+              result="map"
+            />
 
-            <feDisplacementMap ref={redChannelRef} in="SourceGraphic" in2="map" id="redchannel" result="dispRed" />
+            <feDisplacementMap
+              ref={redChannelRef}
+              in="SourceGraphic"
+              in2="map"
+              id="redchannel"
+              result="dispRed"
+            />
             <feColorMatrix
               in="dispRed"
               type="matrix"
@@ -213,7 +238,13 @@ const GlassSurface = ({
               result="green"
             />
 
-            <feDisplacementMap ref={blueChannelRef} in="SourceGraphic" in2="map" id="bluechannel" result="dispBlue" />
+            <feDisplacementMap
+              ref={blueChannelRef}
+              in="SourceGraphic"
+              in2="map"
+              id="bluechannel"
+              result="dispBlue"
+            />
             <feColorMatrix
               in="dispBlue"
               type="matrix"
@@ -226,7 +257,11 @@ const GlassSurface = ({
 
             <feBlend in="red" in2="green" mode="screen" result="rg" />
             <feBlend in="rg" in2="blue" mode="screen" result="output" />
-            <feGaussianBlur ref={gaussianBlurRef} in="output" stdDeviation="0.7" />
+            <feGaussianBlur
+              ref={gaussianBlurRef}
+              in="output"
+              stdDeviation="0.7"
+            />
           </filter>
         </defs>
       </svg>

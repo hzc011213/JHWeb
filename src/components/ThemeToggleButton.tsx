@@ -40,7 +40,9 @@ function useThemeToggle() {
   const isDark = resolvedTheme !== "light";
 
   const updateStyles = useCallback((css: string) => {
-    let styleElement = document.getElementById(styleId) as HTMLStyleElement | null;
+    let styleElement = document.getElementById(
+      styleId,
+    ) as HTMLStyleElement | null;
 
     if (!styleElement) {
       styleElement = document.createElement("style");
@@ -69,7 +71,11 @@ function useThemeToggle() {
   return { isDark, toggleTheme };
 }
 
-export default function ThemeToggleButton({ className = "" }: { className?: string }) {
+export default function ThemeToggleButton({
+  className = "",
+}: {
+  className?: string;
+}) {
   const { isDark, toggleTheme } = useThemeToggle();
 
   return (

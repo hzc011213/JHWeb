@@ -11,7 +11,8 @@ export default function ProductPage() {
             Building useful things with a sharp edge.
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-black/70 dark:text-white/75">
-            A place for projects, experiments, and the product instincts behind them.
+            A place for projects, experiments, and the product instincts behind
+            them.
           </p>
         </div>
       </section>

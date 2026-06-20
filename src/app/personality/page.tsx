@@ -11,7 +11,8 @@ export default function PersonalityPage() {
             Taste, curiosity, and the way I move through ideas.
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-black/70 dark:text-white/75">
-            A more personal layer for values, creative energy, and the bits that make the work feel human.
+            A more personal layer for values, creative energy, and the bits that
+            make the work feel human.
           </p>
         </div>
       </section>

@@ -87,7 +87,14 @@ export default function ScrollFloat({
       tween.scrollTrigger?.kill();
       tween.kill();
     };
-  }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
+  }, [
+    scrollContainerRef,
+    animationDuration,
+    ease,
+    scrollStart,
+    scrollEnd,
+    stagger,
+  ]);
 
   return (
     <h2 ref={containerRef} className={`scroll-float ${containerClassName}`}>

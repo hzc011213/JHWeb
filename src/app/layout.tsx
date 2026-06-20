@@ -6,7 +6,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,7 +21,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "JH | Portfolio",
-  description: "Personal portfolio built with Next.js, TypeScript, Tailwind CSS, and MDX.",
+  description:
+    "Personal portfolio built with Next.js, TypeScript, Tailwind CSS, and MDX.",
 };
 
 export default function RootLayout({
@@ -32,7 +33,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", inter.variable, geistMono.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        inter.variable,
+        geistMono.variable,
+        "font-sans",
+        geist.variable,
+      )}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

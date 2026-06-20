@@ -25,7 +25,11 @@ export default function ShowCard({
   const targetScale = 1 - (totalCards - 1) * stackScaleStep;
   const rangeStart = index / totalCards;
   const rangeEnd = Math.min(1, (index + 1) / totalCards);
-  const scale = useTransform(progress, [rangeStart, rangeEnd], [1, targetScale]);
+  const scale = useTransform(
+    progress,
+    [rangeStart, rangeEnd],
+    [1, targetScale],
+  );
 
   return (
     <div className="h-[85vh]">
