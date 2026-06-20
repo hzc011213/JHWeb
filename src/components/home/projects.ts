@@ -3,7 +3,10 @@ export type Project = {
   category: string;
   name: string;
   images: [string, string, string];
+  arrangement: ShowCardArrangement;
 };
+
+export type ShowCardArrangement = "split" | "feature-left" | "mosaic";
 
 export const projects: Project[] = [
   {
@@ -15,6 +18,7 @@ export const projects: Project[] = [
       "/assets/home-background-dark.png",
       "/assets/brand/nio-et5t-desktop.jpg",
     ],
+    arrangement: "split",
   },
   {
     number: "02",
@@ -25,6 +29,7 @@ export const projects: Project[] = [
       "/assets/brand/nio-et5t-mobile.jpg",
       "/assets/brand/nio-et5t-desktop.jpg",
     ],
+    arrangement: "feature-left",
   },
   {
     number: "03",
@@ -35,5 +40,6 @@ export const projects: Project[] = [
       "/assets/home-background-dark.png",
       "/assets/home-background-light.png",
     ],
+    arrangement: "mosaic",
   },
 ];

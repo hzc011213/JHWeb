@@ -5,14 +5,7 @@ import { useRef } from "react";
 
 import ScrollFloat from "@/components/react-bits/ScrollFloat";
 import ShowCard from "./ShowCard";
-import type { ShowCardArrangement } from "./ShowCard";
 import { projects } from "./projects";
-
-const showCardArrangements: ShowCardArrangement[] = [
-  "split",
-  "feature-left",
-  "mosaic",
-];
 
 export default function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,7 +38,6 @@ export default function ProjectsSection() {
               index={index}
               totalCards={projects.length}
               progress={scrollYProgress}
-              arrangement={showCardArrangements[index % showCardArrangements.length]}
             />
           ))}
         </div>
