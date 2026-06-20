@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+import { KnowlecyLogo } from "@/components/brand/KnowlecyLogo";
 import LogoLoop, { type LogoItem } from "@/components/react-bits/LogoLoop";
 
 function brandLogoNode(
@@ -34,13 +35,7 @@ const brandLogos: LogoItem[] = [
     title: "Hyperduality",
   },
   {
-    node: brandLogoNode(
-      "Knowlecy",
-      "/assets/brand/knowlecy-logo-white.svg",
-      304,
-      40,
-      "light-source",
-    ),
+    node: <KnowlecyLogo />,
     title: "Knowlecy",
   },
   {

@@ -125,6 +125,12 @@ body {
   color: currentColor;
 }
 
+.brand-carousel__logo--knowlecy {
+  display: block;
+  height: calc(var(--logoloop-logoHeight) * 0.7);
+  width: auto;
+}
+
 .brand-carousel__logo--light-source {
   filter: invert(1);
 }
