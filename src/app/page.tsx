@@ -5,7 +5,7 @@ import { useScroll } from "framer-motion";
 
 import BrandCarousel from "@/components/home/BrandCarousel";
 import StackCard from "@/components/home/StackCard";
-import { projects } from "@/components/home/projects";
+import { aboutMe } from "@/components/home/aboutMe";
 import DecryptedText from "@/components/react-bits/DecryptedText";
 import ScrollFloat from "@/components/react-bits/ScrollFloat";
 import TextType from "@/components/react-bits/TextType";
@@ -17,7 +17,7 @@ const DecryptedTextComponent = DecryptedText as ComponentType<
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const totalCards = projects.length;
+  const totalCards = aboutMe.length;
   const finalStackOffset = Math.max(0, totalCards - 1) * 28;
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -107,7 +107,7 @@ export default function Home() {
               paddingBottom: finalStackOffset,
             }}
           >
-            {projects.map((project, index) => (
+            {aboutMe.map((project, index) => (
               <StackCard
                 key={project.name}
                 project={project}

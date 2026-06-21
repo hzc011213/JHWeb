@@ -3,12 +3,11 @@
 import { motion, useReducedMotion, useTransform } from "framer-motion";
 import type { MotionStyle, MotionValue } from "framer-motion";
 
-import type { Project } from "./projects";
-import LiveProjectButton from "./LiveProjectButton";
+import type { AboutMeDTO } from "./aboutMe";
 import ProjectImage from "./ProjectImage";
 
 type StackCardProps = {
-  project: Project;
+  project: AboutMeDTO;
   index: number;
   totalCards: number;
   progress: MotionValue<number>;
@@ -57,7 +56,12 @@ export default function StackCard({
             </h3>
           </div>
           <div className="md:justify-self-end">
-            <LiveProjectButton />
+            <a
+              href="#projects"
+              className="inline-flex rounded-full border-2 border-black/55 px-8 py-3 text-sm font-black uppercase tracking-widest text-black transition-colors hover:bg-black/8 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white dark:border-white/70 dark:text-white dark:hover:bg-white/12 dark:focus-visible:ring-white dark:focus-visible:ring-offset-[#0C0C0C] sm:px-10 sm:py-3.5 sm:text-base"
+            >
+              Explore
+            </a>
           </div>
         </div>
 
@@ -67,7 +71,7 @@ export default function StackCard({
   );
 }
 
-function StackCardImages({ project }: { project: Project }) {
+function StackCardImages({ project }: { project: AboutMeDTO }) {
   if (project.arrangement === "feature-left") {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[58fr_42fr] md:gap-6">

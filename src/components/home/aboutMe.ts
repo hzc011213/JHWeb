@@ -1,4 +1,4 @@
-export type Project = {
+export type AboutMeDTO = {
   number: string;
   category: string;
   name: string;
@@ -8,11 +8,11 @@ export type Project = {
 
 export type StackCardArrangement = "split" | "feature-left" | "mosaic";
 
-export const projects: Project[] = [
+export const aboutMe: AboutMeDTO[] = [
   {
     number: "01",
-    category: "Mobility",
-    name: "NIO Launch System",
+    category: "CRAFT",
+    name: "WHAT I BUILD",
     images: [
       "/assets/brand/nio-et5t-mobile.jpg",
       "/assets/home-background-dark.png",
@@ -22,19 +22,19 @@ export const projects: Project[] = [
   },
   {
     number: "02",
-    category: "Commerce",
-    name: "Shopee Growth Lab",
+    category: "PHILOSOPHY",
+    name: "HOW I THINK",
     images: [
-      "/assets/home-background-light.png",
       "/assets/brand/nio-et5t-mobile.jpg",
+      "/assets/home-background-dark.png",
       "/assets/brand/nio-et5t-desktop.jpg",
     ],
     arrangement: "feature-left",
   },
   {
     number: "03",
-    category: "Product",
-    name: "Leadvisor Workspace",
+    category: "CURIOSITY",
+    name: "WHAT DRIVES ME",
     images: [
       "/assets/brand/nio-et5t-desktop.jpg",
       "/assets/home-background-dark.png",

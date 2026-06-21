@@ -5,23 +5,23 @@ export const products: ProductCardProduct[] = [
     name: "Yard Mobile App",
     company: "Hyperduality",
     date: "November 2025 - Present",
-    image: "/assets/project/yard-all.svg",
+    image: "/assets/product/yard-all.svg",
     imageAlt: "Yard mobile marketplace screens",
     images: [
       {
-        src: "/assets/project/yard1.svg",
+        src: "/assets/product/yard1.svg",
         alt: "Yard mobile app marketplace screen",
       },
       {
-        src: "/assets/project/yard2.svg",
+        src: "/assets/product/yard2.svg",
         alt: "Yard mobile app profile screen",
       },
       {
-        src: "/assets/project/yard3.svg",
+        src: "/assets/product/yard3.svg",
         alt: "Yard mobile app post detail screen",
       },
       {
-        src: "/assets/project/yard4.svg",
+        src: "/assets/product/yard4.svg",
         alt: "Yard mobile app publish screen",
       },
     ],
@@ -37,7 +37,7 @@ export const products: ProductCardProduct[] = [
     name: "Zero-stock Catering Platform",
     company: "Hyperduality",
     date: "October 2025 - Present",
-    image: "/assets/project/zero-stock.png",
+    image: "/assets/product/zero-stock.png",
     imageAlt: "Zero-stock Catering Platform dashboard",
     alignment: "image-right",
     description: [
@@ -49,7 +49,7 @@ export const products: ProductCardProduct[] = [
     name: "Task Orchestration",
     company: "Nio",
     date: "June 2025 - August 2025",
-    image: "/assets/project/task-orch.png",
+    image: "/assets/product/task-orch.png",
     imageAlt: "Task Orchestration scheduling diagram",
     alignment: "image-left",
     description: [
@@ -61,7 +61,7 @@ export const products: ProductCardProduct[] = [
     name: "AI Production Line",
     company: "Nio",
     date: "December 2024 - March 2025",
-    image: "/assets/project/aipl.png",
+    image: "/assets/product/aipl.png",
     imageAlt: "AI Production Line model lifecycle diagram",
     alignment: "image-right",
     description: [
