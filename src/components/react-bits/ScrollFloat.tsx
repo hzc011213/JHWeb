@@ -14,6 +14,7 @@ interface ScrollFloatProps {
   scrollContainerRef?: RefObject<HTMLElement | null>;
   containerClassName?: string;
   textClassName?: string;
+  splitBy?: "character" | "word";
   animationDuration?: number;
   ease?: string;
   scrollStart?: string;
@@ -26,6 +27,7 @@ export default function ScrollFloat({
   scrollContainerRef,
   containerClassName = "",
   textClassName = "",
+  splitBy = "character",
   animationDuration = 1,
   ease = "back.inOut(2)",
   scrollStart = "center bottom+=50%",
@@ -37,12 +39,24 @@ export default function ScrollFloat({
   const splitText = useMemo(() => {
     const text = typeof children === "string" ? children : "";
 
+    if (splitBy === "word") {
+      return text.split(/(\s+)/).map((token, index) =>
+        /\s+/.test(token) ? (
+          token
+        ) : (
+          <span className="scroll-float-char" key={`${token}-${index}`}>
+            {token}
+          </span>
+        ),
+      );
+    }
+
     return text.split("").map((char, index) => (
       <span className="scroll-float-char" key={`${char}-${index}`}>
         {char === " " ? "\u00A0" : char}
       </span>
     ));
-  }, [children]);
+  }, [children, splitBy]);
 
   useEffect(() => {
     const el = containerRef.current;
