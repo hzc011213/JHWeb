@@ -97,6 +97,8 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
   }
 
   if (project.arrangement === "mosaic") {
+    const fourthImage = project.images[3];
+
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[38fr_24fr_38fr] md:grid-rows-2 md:gap-6">
         <StackCardImage
@@ -114,7 +116,15 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
           alt={`${project.name} preview`}
           className="min-h-55 md:row-span-2 md:min-h-0"
         />
-        <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] dark:border-white/12 dark:bg-white/[0.035] sm:rounded-[38px] md:block md:rounded-[46px]" />
+        {fourthImage ? (
+          <StackCardImage
+            src={fourthImage}
+            alt={`${project.name} supporting detail`}
+            className="min-h-35 md:min-h-0"
+          />
+        ) : (
+          <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] dark:border-white/12 dark:bg-white/[0.035] sm:rounded-[38px] md:block md:rounded-[46px]" />
+        )}
       </div>
     );
   }

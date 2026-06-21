@@ -2,7 +2,7 @@ export type AboutMeDTO = {
   number: string;
   category: string;
   name: string;
-  images: [string, string, string];
+  images: string[];
   arrangement: StackCardArrangement;
 };
 
@@ -14,8 +14,8 @@ export const aboutMe: AboutMeDTO[] = [
     category: "CRAFT",
     name: "WHAT I BUILD",
     images: [
-      "/assets/brand/nio-et5t-mobile.jpg",
-      "/assets/home-background-dark.png",
+      "/assets/product/zero-stock.png",
+      "/assets/product/aipl.png",
       "/assets/product/yard-all.png",
     ],
     arrangement: "split",
@@ -25,9 +25,9 @@ export const aboutMe: AboutMeDTO[] = [
     category: "PHILOSOPHY",
     name: "HOW I THINK",
     images: [
-      "/assets/brand/nio-et5t-mobile.jpg",
       "/assets/home-background-dark.png",
-      "/assets/brand/nio-et5t-desktop.jpg",
+      "/assets/portrait/engineer.png",
+      "/assets/designs/avp-pod.png",
     ],
     arrangement: "feature-left",
   },
@@ -36,9 +36,10 @@ export const aboutMe: AboutMeDTO[] = [
     category: "CURIOSITY",
     name: "WHAT DRIVES ME",
     images: [
-      "/assets/brand/nio-et5t-desktop.jpg",
-      "/assets/home-background-dark.png",
-      "/assets/home-background-light.png",
+      "/assets/life/travel8.jpg",
+      "/assets/life/travel2.jpeg",
+      "/assets/life/cat3.jpg",
+      "/assets/life/travel6.jpg",
     ],
     arrangement: "mosaic",
   },
