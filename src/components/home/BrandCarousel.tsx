@@ -83,6 +83,7 @@ export default function BrandCarousel() {
         "mx-auto my-12 max-w-[min(calc(100vw-2rem),56rem)] overflow-hidden md:my-16",
       )}
     >
+      <h2 className={styles.title}>Proud to have impacted</h2>
       <LogoLoop
         ariaLabel="Brand logos"
         fadeOut
@@ -91,7 +92,7 @@ export default function BrandCarousel() {
         logos={brandLogos}
         pauseOnHover
         scaleOnHover
-        speed={84}
+        speed={64}
         width="100%"
       />
     </div>

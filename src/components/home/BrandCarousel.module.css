@@ -3,8 +3,23 @@
   --logoloop-hoverScale: 1.08;
 }
 
+.title {
+  margin: 1rem 0 2.5rem;
+  color: rgba(5, 5, 5, 0.56);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 :global(.dark) .root {
   --logoloop-fadeColor: #050505;
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .logo {
