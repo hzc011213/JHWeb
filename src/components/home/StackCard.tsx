@@ -7,19 +7,19 @@ import type { Project } from "./projects";
 import LiveProjectButton from "./LiveProjectButton";
 import ProjectImage from "./ProjectImage";
 
-type ShowCardProps = {
+type StackCardProps = {
   project: Project;
   index: number;
   totalCards: number;
   progress: MotionValue<number>;
 };
 
-export default function ShowCard({
+export default function StackCard({
   project,
   index,
   totalCards,
   progress,
-}: ShowCardProps) {
+}: StackCardProps) {
   const prefersReducedMotion = useReducedMotion();
   const stackScaleStep = 0.03;
   const targetScale = 1 - (totalCards - 1 - index) * stackScaleStep;
@@ -41,18 +41,18 @@ export default function ShowCard({
       style={{ zIndex: index + 1 }}
     >
       <motion.article
-        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[40px] border-2 border-black/10 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform dark:border-[#D7E2EA] dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[30px] border border-black/12 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform dark:border-white/18 dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[38px] sm:p-6 md:rounded-[46px] md:p-8"
         style={cardStyle}
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">
-          <span className="font-black leading-none tracking-tight text-black/88 tabular-nums text-[clamp(3.5rem,9vw,120px)] dark:text-white/92">
+          <span className="font-black leading-none tracking-normal text-black/88 tabular-nums text-[clamp(3.5rem,9vw,120px)] dark:text-white/92">
             {project.number}
           </span>
           <div className="min-w-0">
-            <p className="mb-2 text-xs font-black uppercase tracking-[0.32em] text-black/48 dark:text-white/48 sm:text-sm">
+            <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.32em] text-black/48 dark:text-white/48 sm:text-sm">
               {project.category}
             </p>
-            <h3 className="text-pretty wrap-break-word text-3xl font-black uppercase leading-none tracking-tight sm:text-5xl md:text-6xl">
+            <h3 className="text-pretty wrap-break-word text-3xl font-black uppercase leading-none tracking-normal sm:text-5xl md:text-6xl">
               {project.name}
             </h3>
           </div>
@@ -61,13 +61,13 @@ export default function ShowCard({
           </div>
         </div>
 
-        <ShowCardImages project={project} />
+        <StackCardImages project={project} />
       </motion.article>
     </div>
   );
 }
 
-function ShowCardImages({ project }: { project: Project }) {
+function StackCardImages({ project }: { project: Project }) {
   if (project.arrangement === "feature-left") {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[58fr_42fr] md:gap-6">
@@ -110,7 +110,7 @@ function ShowCardImages({ project }: { project: Project }) {
           alt={`${project.name} preview`}
           className="min-h-55 md:row-span-2 md:min-h-0"
         />
-        <div className="hidden rounded-[40px] border border-black/10 bg-black/[0.035] dark:border-white/12 dark:bg-white/[0.035] sm:rounded-[50px] md:block md:rounded-[60px]" />
+        <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] dark:border-white/12 dark:bg-white/[0.035] sm:rounded-[38px] md:block md:rounded-[46px]" />
       </div>
     );
   }

@@ -3,10 +3,10 @@ export type Project = {
   category: string;
   name: string;
   images: [string, string, string];
-  arrangement: ShowCardArrangement;
+  arrangement: StackCardArrangement;
 };
 
-export type ShowCardArrangement = "split" | "feature-left" | "mosaic";
+export type StackCardArrangement = "split" | "feature-left" | "mosaic";
 
 export const projects: Project[] = [
   {
