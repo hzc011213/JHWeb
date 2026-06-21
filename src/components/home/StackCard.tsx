@@ -4,7 +4,7 @@ import { motion, useReducedMotion, useTransform } from "framer-motion";
 import type { MotionStyle, MotionValue } from "framer-motion";
 
 import type { AboutMeDTO } from "./aboutMe";
-import ProjectImage from "./ProjectImage";
+import StackCardImage from "./StackCardImage";
 
 type StackCardProps = {
   project: AboutMeDTO;
@@ -75,18 +75,18 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
   if (project.arrangement === "feature-left") {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[58fr_42fr] md:gap-6">
-        <ProjectImage
+        <StackCardImage
           src={project.images[2]}
           alt={`${project.name} preview`}
           className="min-h-55 md:min-h-0"
         />
         <div className="grid min-h-0 grid-rows-2 gap-4 md:gap-6">
-          <ProjectImage
+          <StackCardImage
             src={project.images[0]}
             alt={`${project.name} detail`}
             className="min-h-0"
           />
-          <ProjectImage
+          <StackCardImage
             src={project.images[1]}
             alt={`${project.name} interface`}
             className="min-h-0"
@@ -99,17 +99,17 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
   if (project.arrangement === "mosaic") {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[38fr_24fr_38fr] md:grid-rows-2 md:gap-6">
-        <ProjectImage
+        <StackCardImage
           src={project.images[0]}
           alt={`${project.name} detail`}
           className="min-h-35 md:row-span-2 md:min-h-0"
         />
-        <ProjectImage
+        <StackCardImage
           src={project.images[1]}
           alt={`${project.name} interface`}
           className="min-h-35 md:min-h-0"
         />
-        <ProjectImage
+        <StackCardImage
           src={project.images[2]}
           alt={`${project.name} preview`}
           className="min-h-55 md:row-span-2 md:min-h-0"
@@ -122,18 +122,18 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
   return (
     <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[40fr_60fr] md:gap-6">
       <div className="grid min-h-0 grid-rows-[minmax(0,0.82fr)_minmax(0,1.18fr)] gap-4 md:gap-6">
-        <ProjectImage
+        <StackCardImage
           src={project.images[0]}
           alt={`${project.name} detail`}
           className="min-h-0"
         />
-        <ProjectImage
+        <StackCardImage
           src={project.images[1]}
           alt={`${project.name} interface`}
           className="min-h-0"
         />
       </div>
-      <ProjectImage
+      <StackCardImage
         src={project.images[2]}
         alt={`${project.name} preview`}
         className="min-h-55 md:min-h-0"

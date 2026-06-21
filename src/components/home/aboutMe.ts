@@ -16,7 +16,7 @@ export const aboutMe: AboutMeDTO[] = [
     images: [
       "/assets/brand/nio-et5t-mobile.jpg",
       "/assets/home-background-dark.png",
-      "/assets/brand/nio-et5t-desktop.jpg",
+      "/assets/product/yard-all.png",
     ],
     arrangement: "split",
   },
