@@ -29,3 +29,7 @@
 .link:hover {
   color: var(--navbar-fg);
 }
+
+.selectedLink {
+  color: var(--navbar-fg);
+}
