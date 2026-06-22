@@ -1,0 +1,137 @@
+.portrait-gallery {
+  margin: clamp(2.25rem, 5vw, 4.75rem) auto clamp(2rem, 4vw, 3.75rem);
+  width: min(1180px, calc(100vw - 2.5rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.portrait-gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portrait-gallery__item {
+  min-width: 0;
+}
+
+.portrait-card {
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.portrait-gallery__card.card-spotlight {
+  aspect-ratio: 1 / 1;
+  border-radius: clamp(1.4rem, 2vw, 2rem);
+  padding: clamp(0.85rem, 1.4vw, 1.25rem);
+  transition:
+    border-color 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-gallery__card.card-spotlight:hover {
+  transform: translateY(-4px);
+}
+
+.portrait-gallery__card.card-spotlight:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.portrait-gallery__card.card-spotlight::before {
+  transition: opacity 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.05) translateY(2.5%);
+  filter: drop-shadow(0 24px 28px rgba(255, 255, 255, 0.1));
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-gallery__card.card-spotlight:hover .portrait-gallery__image {
+  transform: scale(1.09) translateY(1%);
+}
+
+.portrait-gallery__label {
+  padding-top: 1rem;
+  text-align: left;
+}
+
+.portrait-gallery__label .scroll-float {
+  margin: 0;
+  overflow: visible;
+  text-align: left;
+}
+
+.portrait-gallery__title {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.25vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  color: rgba(5, 5, 5, 0.92);
+}
+
+.portrait-gallery__caption-wrap {
+  margin-top: calc(0.55rem + 4px);
+}
+
+.portrait-gallery__caption {
+  display: inline-block;
+  margin: 0;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(5, 5, 5, 0.54);
+}
+
+.dark .portrait-gallery__title {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.dark .portrait-gallery__caption {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+@media (min-width: 640px) {
+  .portrait-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.25rem, 2.4vw, 2.1rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .portrait-gallery__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .portrait-gallery__item:nth-child(2),
+  .portrait-gallery__item:nth-child(4) {
+    transform: translateY(1.15rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-card,
+  .portrait-gallery__item,
+  .portrait-gallery__item:nth-child(2),
+  .portrait-gallery__item:nth-child(4),
+  .portrait-gallery__card.card-spotlight,
+  .portrait-gallery__image {
+    transition: none;
+    transform: none;
+  }
+
+  .portrait-card {
+    opacity: 1;
+    visibility: visible;
+    will-change: auto;
+  }
+}

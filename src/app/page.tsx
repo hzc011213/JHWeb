@@ -4,6 +4,7 @@ import { useRef, type ComponentType } from "react";
 import { useScroll } from "framer-motion";
 
 import BrandCarousel from "@/components/home/BrandCarousel";
+import PortraitGallery from "@/components/home/PortraitGallery";
 import StackCard from "@/components/home/StackCard";
 import { aboutMe } from "@/components/home/aboutMe";
 import DecryptedText from "@/components/react-bits/DecryptedText";
@@ -26,12 +27,12 @@ export default function Home() {
 
   return (
     <main className="bg-white dark:bg-black">
-      <div className="relative min-h-screen overflow-hidden bg-[image:url('/assets/home-background-light.png')] bg-cover bg-center text-[#050505] transition-[background-image,color] duration-500 dark:bg-[url('/assets/home-background-dark.png')] dark:text-white">
+      <div className="relative min-h-dvhflow-hidden bg-[image:url('/assets/home-background-light.png')] bg-cover bg-center text-[#050505] transition-[background-image,color] duration-500 dark:bg-[url('/assets/home-background-dark.png')] dark:text-white">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-white/8 transition-colors dark:bg-black/20"
         />
-        <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-36 text-center sm:pb-28">
+        <section className="relative z-10 flex min-h-dvh items-center justify-center px-6 pb-36 text-center sm:pb-28">
           <div className="flex flex-col items-center gap-5">
             <TextTypeComponent
               as="h1"
@@ -73,26 +74,15 @@ export default function Home() {
             >
               About Me
             </ScrollFloat>
+            <PortraitGallery />
             <ScrollFloat
-              animationDuration={0.9}
-              ease="back.inOut(2)"
-              scrollStart="center bottom+=42%"
-              scrollEnd="bottom bottom-=32%"
-              splitBy="word"
-              stagger={0.035}
-              containerClassName="mt-5"
-              textClassName="!text-[clamp(1.25rem,2.4vw,2.25rem)] !font-semibold !leading-tight"
-            >
-              Entrepreneur, designer, engineer, dreamer.
-            </ScrollFloat>
-            <ScrollFloat
-              animationDuration={0.85}
+              animationDuration={1}
               ease="back.inOut(2)"
               scrollStart="center bottom+=36%"
               scrollEnd="bottom bottom-=28%"
               splitBy="word"
               stagger={0.018}
-              containerClassName="mx-auto mt-4 max-w-3xl text-black/66 dark:text-white/68"
+              containerClassName="mx-auto mt-30 max-w-3xl text-black/66 dark:text-white/68"
               textClassName="!text-[clamp(0.98rem,1.35vw,1.18rem)] !font-medium !leading-relaxed"
             >
               {
