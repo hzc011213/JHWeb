@@ -4,12 +4,14 @@ type StackCardImageProps = {
   src: string;
   alt: string;
   className: string;
+  loading?: "eager" | "lazy";
 };
 
 export default function StackCardImage({
   src,
   alt,
   className,
+  loading = "lazy",
 }: StackCardImageProps) {
   return (
     <div
@@ -19,7 +21,7 @@ export default function StackCardImage({
         src={src}
         alt={alt}
         fill
-        loading="lazy"
+        loading={loading}
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover"
       />

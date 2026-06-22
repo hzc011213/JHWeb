@@ -74,7 +74,7 @@ export default function StackCard({
 function StackCardImages({ project }: { project: AboutMeDTO }) {
   if (project.arrangement === "with-description") {
     return (
-      <div className="grid min-h-0 flex-1 content-center gap-6 md:grid-cols-[58fr_42fr] md:items-center md:gap-10">
+      <div className="grid min-h-0 flex-1 content-start gap-6 md:grid-cols-[58fr_42fr] md:items-center md:gap-10">
         <StackCardImage
           src={project.images[0]}
           alt={`${project.name} preview`}
@@ -164,6 +164,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
         src={project.images[2]}
         alt={`${project.name} preview`}
         className="min-h-55 md:min-h-0"
+        loading={project.number === "01" ? "eager" : "lazy"}
       />
     </div>
   );

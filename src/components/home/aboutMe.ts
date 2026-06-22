@@ -19,8 +19,8 @@ export const aboutMe: AboutMeDTO[] = [
     category: "CRAFT",
     name: "WHAT I BUILD",
     images: [
-      "/assets/product/zero-stock.png",
       "/assets/product/aipl.png",
+      "/assets/product/salary.png",
       "/assets/product/yard-all.png",
     ],
     arrangement: "split",
