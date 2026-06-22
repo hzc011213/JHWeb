@@ -7,14 +7,14 @@ import type { AboutMeDTO } from "./aboutMe";
 import StackCardImage from "./StackCardImage";
 
 type StackCardProps = {
-  project: AboutMeDTO;
+  content: AboutMeDTO;
   index: number;
   totalCards: number;
   progress: MotionValue<number>;
 };
 
 export default function StackCard({
-  project,
+  content,
   index,
   totalCards,
   progress,
@@ -45,14 +45,14 @@ export default function StackCard({
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">
           <span className="font-black leading-none tracking-normal text-black/88 tabular-nums text-[clamp(3.5rem,9vw,120px)] dark:text-white/92">
-            {project.number}
+            {content.number}
           </span>
           <div className="min-w-0">
             <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.32em] text-black/48 dark:text-white/48 sm:text-sm">
-              {project.category}
+              {content.category}
             </p>
             <h3 className="text-pretty wrap-break-word text-3xl font-black uppercase leading-none tracking-normal sm:text-5xl md:text-6xl">
-              {project.name}
+              {content.name}
             </h3>
           </div>
           <div className="md:justify-self-end">
@@ -65,13 +65,30 @@ export default function StackCard({
           </div>
         </div>
 
-        <StackCardImages project={project} />
+        <StackCardImages project={content} />
       </motion.article>
     </div>
   );
 }
 
 function StackCardImages({ project }: { project: AboutMeDTO }) {
+  if (project.arrangement === "with-description") {
+    return (
+      <div className="grid min-h-0 flex-1 content-center gap-6 md:grid-cols-[58fr_42fr] md:items-center md:gap-10">
+        <StackCardImage
+          src={project.images[0]}
+          alt={`${project.name} preview`}
+          className="aspect-video min-h-0"
+        />
+        <div className="flex min-h-0 items-center justify-center">
+          <p className="max-w-100 text-pretty text-center text-base font-medium leading-relaxed text-black/74 dark:text-white/76 sm:text-lg md:text-left md:text-[clamp(1.05rem,1.55vw,1.65rem)] md:leading-snug">
+            {project.description}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   if (project.arrangement === "feature-left") {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[58fr_42fr] md:gap-6">

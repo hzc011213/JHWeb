@@ -2,11 +2,16 @@ export type AboutMeDTO = {
   number: string;
   category: string;
   name: string;
+  description?: string;
   images: string[];
   arrangement: StackCardArrangement;
 };
 
-export type StackCardArrangement = "split" | "feature-left" | "mosaic";
+export type StackCardArrangement =
+  | "split"
+  | "feature-left"
+  | "mosaic"
+  | "with-description";
 
 export const aboutMe: AboutMeDTO[] = [
   {
@@ -25,11 +30,11 @@ export const aboutMe: AboutMeDTO[] = [
     category: "PHILOSOPHY",
     name: "HOW I THINK",
     images: [
-      "/assets/home-background-dark.png",
-      "/assets/portrait/engineer.png",
       "/assets/designs/avp-pod.png",
     ],
-    arrangement: "feature-left",
+    description:
+      "I think in systems first: what the person needs, what the product should make obvious, and where the smallest technical choice can make the whole experience feel calmer.",
+    arrangement: "with-description",
   },
   {
     number: "03",

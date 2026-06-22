@@ -97,10 +97,10 @@ export default function Home() {
               paddingBottom: finalStackOffset,
             }}
           >
-            {aboutMe.map((project, index) => (
+            {aboutMe.map((content, index) => (
               <StackCard
-                key={project.name}
-                project={project}
+                key={content.name}
+                content={content}
                 index={index}
                 totalCards={totalCards}
                 progress={scrollYProgress}
