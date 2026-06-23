@@ -1,17 +1,17 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 type StackCardImageProps = {
   src: string;
   alt: string;
   className: string;
-  loading?: "eager" | "lazy";
+  loading?: 'eager' | 'lazy';
 };
 
 export default function StackCardImage({
   src,
   alt,
   className,
-  loading = "lazy",
+  loading = 'lazy',
 }: StackCardImageProps) {
   return (
     <div

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import type { ReactNode, RefObject } from "react";
-import { useEffect, useMemo, useRef } from "react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import type { ReactNode, RefObject } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
-import "./ScrollFloat.css";
+import './ScrollFloat.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,7 @@ interface ScrollFloatProps {
   scrollContainerRef?: RefObject<HTMLElement | null>;
   containerClassName?: string;
   textClassName?: string;
-  splitBy?: "character" | "word";
+  splitBy?: 'character' | 'word';
   animationDuration?: number;
   ease?: string;
   scrollStart?: string;
@@ -25,21 +25,21 @@ interface ScrollFloatProps {
 export default function ScrollFloat({
   children,
   scrollContainerRef,
-  containerClassName = "",
-  textClassName = "",
-  splitBy = "character",
+  containerClassName = '',
+  textClassName = '',
+  splitBy = 'character',
   animationDuration = 1,
-  ease = "back.inOut(2)",
-  scrollStart = "center bottom+=50%",
-  scrollEnd = "bottom bottom-=40%",
+  ease = 'back.inOut(2)',
+  scrollStart = 'center bottom+=50%',
+  scrollEnd = 'bottom bottom-=40%',
   stagger = 0.03,
 }: ScrollFloatProps) {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
   const splitText = useMemo(() => {
-    const text = typeof children === "string" ? children : "";
+    const text = typeof children === 'string' ? children : '';
 
-    if (splitBy === "word") {
+    if (splitBy === 'word') {
       return text.split(/(\s+)/).map((token, index) =>
         /\s+/.test(token) ? (
           token
@@ -51,9 +51,9 @@ export default function ScrollFloat({
       );
     }
 
-    return text.split("").map((char, index) => (
+    return text.split('').map((char, index) => (
       <span className="scroll-float-char" key={`${char}-${index}`}>
-        {char === " " ? "\u00A0" : char}
+        {char === ' ' ? '\u00A0' : char}
       </span>
     ));
   }, [children, splitBy]);
@@ -66,17 +66,17 @@ export default function ScrollFloat({
     }
 
     const scroller = scrollContainerRef?.current ?? window;
-    const charElements = el.querySelectorAll(".scroll-float-char");
+    const charElements = el.querySelectorAll('.scroll-float-char');
 
     const tween = gsap.fromTo(
       charElements,
       {
-        willChange: "opacity, transform",
+        willChange: 'opacity, transform',
         opacity: 0,
         yPercent: 120,
         scaleY: 2.3,
         scaleX: 0.7,
-        transformOrigin: "50% 0%",
+        transformOrigin: '50% 0%',
       },
       {
         duration: animationDuration,

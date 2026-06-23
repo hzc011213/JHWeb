@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import styles from "./Navbar.module.css";
+import styles from './Navbar.module.css';
 
 type NavItem = {
   label: string;
@@ -13,18 +13,14 @@ type NavItem = {
 };
 
 function isSelectedPath(pathname: string, href: string) {
-  if (href === "/") {
+  if (href === '/') {
     return pathname === href;
   }
 
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export default function NavbarLinks({
-  items,
-}: {
-  items: readonly NavItem[];
-}) {
+export default function NavbarLinks({ items }: { items: readonly NavItem[] }) {
   const pathname = usePathname();
 
   return (
@@ -34,11 +30,11 @@ export default function NavbarLinks({
 
         return (
           <Link
-            aria-current={isSelected ? "page" : undefined}
+            aria-current={isSelected ? 'page' : undefined}
             className={cn(
               styles.link,
               isSelected && styles.selectedLink,
-              "relative rounded-full px-3.5 py-2 text-sm font-medium transition-[background-color,color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98]",
+              'relative rounded-full px-3.5 py-2 text-sm font-medium transition-[background-color,color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98]',
             )}
             href={item.href}
             key={item.href}

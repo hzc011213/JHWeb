@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
-import ScrollFloat from "@/components/react-bits/ScrollFloat";
-import SpotlightCard from "@/components/react-bits/SpotlightCard";
+import ScrollFloat from '@/components/react-bits/ScrollFloat';
+import SpotlightCard from '@/components/react-bits/SpotlightCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +31,7 @@ export default function PortraitCard({
     }
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      '(prefers-reduced-motion: reduce)',
     ).matches;
 
     if (prefersReducedMotion) {
@@ -43,8 +43,8 @@ export default function PortraitCard({
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: "top bottom-=8%",
-          end: "bottom top+=8%",
+          start: 'top bottom-=8%',
+          end: 'bottom top+=8%',
           scrub: 0.45,
         },
       });
@@ -53,14 +53,14 @@ export default function PortraitCard({
         .fromTo(
           card,
           { autoAlpha: 0, y: 24 },
-          { autoAlpha: 1, y: 0, duration: 0.22, ease: "power2.out" },
+          { autoAlpha: 1, y: 0, duration: 0.22, ease: 'power2.out' },
         )
         .to(card, { autoAlpha: 1, y: 0, duration: 0.58 })
         .to(card, {
           autoAlpha: 0,
           y: -18,
           duration: 0.2,
-          ease: "power2.in",
+          ease: 'power2.in',
         });
     }, card);
 

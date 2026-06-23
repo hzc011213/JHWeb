@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import BlurText from "@/components/react-bits/BlurText";
+import BlurText from '@/components/react-bits/BlurText';
 
 type ProductBlurTextProps = {
   text: string;
   className: string;
-  animateBy?: "words" | "letters";
+  animateBy?: 'words' | 'letters';
   delay?: number;
-  direction?: "top" | "bottom";
+  direction?: 'top' | 'bottom';
   stepDuration?: number;
 };
 
 export default function ProductBlurText({
   text,
   className,
-  animateBy = "words",
+  animateBy = 'words',
   delay = 10,
-  direction = "bottom",
+  direction = 'bottom',
   stepDuration,
 }: ProductBlurTextProps) {
   return (

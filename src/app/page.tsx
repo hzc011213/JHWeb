@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useRef, type ComponentType } from "react";
-import { useScroll } from "framer-motion";
+import { useRef, type ComponentType } from 'react';
+import { useScroll } from 'framer-motion';
 
-import BrandCarousel from "@/components/home/BrandCarousel";
-import PortraitGallery from "@/components/home/PortraitGallery";
-import StackCard from "@/components/home/StackCard";
-import { aboutMe } from "@/components/home/aboutMe";
-import DecryptedText from "@/components/react-bits/DecryptedText";
-import ScrollFloat from "@/components/react-bits/ScrollFloat";
-import TextType from "@/components/react-bits/TextType";
+import BrandCarousel from '@/components/home/BrandCarousel';
+import PortraitGallery from '@/components/home/PortraitGallery';
+import StackCard from '@/components/home/StackCard';
+import { aboutMe } from '@/components/home/aboutMe';
+import DecryptedText from '@/components/react-bits/DecryptedText';
+import ScrollFloat from '@/components/react-bits/ScrollFloat';
+import TextType from '@/components/react-bits/TextType';
 
 const TextTypeComponent = TextType as ComponentType<Record<string, unknown>>;
 const DecryptedTextComponent = DecryptedText as ComponentType<
@@ -22,12 +22,12 @@ export default function Home() {
   const finalStackOffset = Math.max(0, totalCards - 1) * 28;
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
+    offset: ['start start', 'end end'],
   });
 
   return (
     <main className="bg-white dark:bg-black">
-      <div className="relative min-h-dvhflow-hidden bg-[image:url('/assets/home-background-light.png')] bg-cover bg-center text-[#050505] transition-[background-image,color] duration-500 dark:bg-[url('/assets/home-background-dark.png')] dark:text-white">
+      <div className="min-h-dvhflow-hidden relative bg-[image:url('/assets/home-background-light.png')] bg-cover bg-center text-[#050505] transition-[background-image,color] duration-500 dark:bg-[url('/assets/home-background-dark.png')] dark:text-white">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-white/8 transition-colors dark:bg-black/20"
@@ -60,10 +60,10 @@ export default function Home() {
       <BrandCarousel />
       <section
         id="projects"
-        className="relative z-10 mt-8 scroll-mt-24 rounded-t-[40px] bg-white px-5 py-20 text-black dark:bg-black dark:text-white sm:mt-16 sm:rounded-t-[50px] sm:px-8 md:mt-20 md:scroll-mt-32 md:rounded-t-[60px] md:px-10"
+        className="relative z-10 mt-8 scroll-mt-24 rounded-t-[40px] bg-white px-5 py-20 text-black sm:mt-16 sm:rounded-t-[50px] sm:px-8 md:mt-20 md:scroll-mt-32 md:rounded-t-[60px] md:px-10 dark:bg-black dark:text-white"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-24 max-w-4xl text-center text-black dark:text-white md:mb-30">
+          <div className="mx-auto mb-24 max-w-4xl text-center text-black md:mb-30 dark:text-white">
             <ScrollFloat
               animationDuration={1}
               ease="back.inOut(2)"

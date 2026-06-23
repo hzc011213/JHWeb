@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /* eslint-disable react-hooks/refs */
 import {
@@ -8,23 +8,23 @@ import {
   createElement,
   useMemo,
   useCallback,
-} from "react";
-import { gsap } from "gsap";
-import "./TextType.css";
+} from 'react';
+import { gsap } from 'gsap';
+import './TextType.css';
 
 const TextType = ({
   text,
-  as: Component = "div",
+  as: Component = 'div',
   typingSpeed = 50,
   initialDelay = 0,
   pauseDuration = 2000,
   deletingSpeed = 30,
   loop = true,
-  className = "",
+  className = '',
   showCursor = true,
   hideCursorWhileTyping = false,
-  cursorCharacter = "|",
-  cursorClassName = "",
+  cursorCharacter = '|',
+  cursorClassName = '',
   cursorBlinkDuration = 0.5,
   textColors = [],
   variableSpeed,
@@ -33,7 +33,7 @@ const TextType = ({
   reverseMode = false,
   ...props
 }) => {
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState('');
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -53,7 +53,7 @@ const TextType = ({
   }, [variableSpeed, typingSpeed]);
 
   const getCurrentTextColor = () => {
-    if (textColors.length === 0) return "inherit";
+    if (textColors.length === 0) return 'inherit';
     return textColors[currentTextIndex % textColors.length];
   };
 
@@ -83,7 +83,7 @@ const TextType = ({
         duration: cursorBlinkDuration,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut",
+        ease: 'power2.inOut',
       });
     }
   }, [showCursor, cursorBlinkDuration]);
@@ -94,12 +94,12 @@ const TextType = ({
     let timeout;
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode
-      ? currentText.split("").reverse().join("")
+      ? currentText.split('').reverse().join('')
       : currentText;
 
     const executeTypingAnimation = () => {
       if (isDeleting) {
-        if (displayedText === "") {
+        if (displayedText === '') {
           setIsDeleting(false);
           if (currentTextIndex === textArray.length - 1 && !loop) {
             return;
@@ -137,7 +137,7 @@ const TextType = ({
       }
     };
 
-    if (currentCharIndex === 0 && !isDeleting && displayedText === "") {
+    if (currentCharIndex === 0 && !isDeleting && displayedText === '') {
       timeout = setTimeout(executeTypingAnimation, initialDelay);
     } else {
       executeTypingAnimation();
@@ -175,14 +175,14 @@ const TextType = ({
     },
     <span
       className="text-type__content"
-      style={{ color: getCurrentTextColor() || "inherit" }}
+      style={{ color: getCurrentTextColor() || 'inherit' }}
     >
       {displayedText}
     </span>,
     showCursor && (
       <span
         ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? "text-type__cursor--hidden" : ""}`}
+        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
       >
         {cursorCharacter}
       </span>

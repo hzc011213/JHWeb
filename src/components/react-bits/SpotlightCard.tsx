@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
 import {
   useRef,
   type CSSProperties,
   type PointerEventHandler,
   type PropsWithChildren,
-} from "react";
+} from 'react';
 
-import "./SpotlightCard.css";
+import './SpotlightCard.css';
 
 interface SpotlightCardProps extends PropsWithChildren {
   className?: string;
@@ -15,13 +15,13 @@ interface SpotlightCardProps extends PropsWithChildren {
 }
 
 type SpotlightCardStyle = CSSProperties & {
-  "--spotlight-color": string;
+  '--spotlight-color': string;
 };
 
 export default function SpotlightCard({
   children,
-  className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)",
+  className = '',
+  spotlightColor = 'rgba(255, 255, 255, 0.25)',
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -32,17 +32,17 @@ export default function SpotlightCard({
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    divRef.current.style.setProperty("--mouse-x", `${x}px`);
-    divRef.current.style.setProperty("--mouse-y", `${y}px`);
-    divRef.current.style.setProperty("--spotlight-color", spotlightColor);
+    divRef.current.style.setProperty('--mouse-x', `${x}px`);
+    divRef.current.style.setProperty('--mouse-y', `${y}px`);
+    divRef.current.style.setProperty('--spotlight-color', spotlightColor);
   };
 
   return (
     <div
       ref={divRef}
       onPointerMove={handlePointerMove}
-      className={["card-spotlight", className].filter(Boolean).join(" ")}
-      style={{ "--spotlight-color": spotlightColor } as SpotlightCardStyle}
+      className={['card-spotlight', className].filter(Boolean).join(' ')}
+      style={{ '--spotlight-color': spotlightColor } as SpotlightCardStyle}
     >
       {children}
     </div>

@@ -1,14 +1,14 @@
-import GlassSurface from "@/components/react-bits/GlassSurface";
-import { cn } from "@/lib/utils";
+import GlassSurface from '@/components/react-bits/GlassSurface';
+import { cn } from '@/lib/utils';
 
-import styles from "./Navbar.module.css";
-import NavbarLinks from "./NavbarLinks";
+import styles from './Navbar.module.css';
+import NavbarLinks from './NavbarLinks';
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Product", href: "/product" },
-  { label: "Design", href: "/Design" },
-  { label: "Experience", href: "/experience" },
+  { label: 'Home', href: '/' },
+  { label: 'Product', href: '/product' },
+  { label: 'Design', href: '/design' },
+  { label: 'Experience', href: '/experience' },
 ];
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav
       className={cn(
         styles.root,
-        "fixed left-0 right-0 top-4 z-50 flex items-center justify-between px-8 lg:px-16",
+        'fixed top-4 right-0 left-0 z-50 flex items-center justify-between px-8 lg:px-16',
       )}
     >
       <div aria-hidden="true" className="h-12 w-12" />
@@ -33,7 +33,7 @@ export default function Navbar() {
         saturation={1}
         className={cn(
           styles.glass,
-          "hidden items-center px-1.5 py-1.5 md:flex",
+          'hidden items-center px-1.5 py-1.5 md:flex',
         )}
       >
         <NavbarLinks items={navItems} />

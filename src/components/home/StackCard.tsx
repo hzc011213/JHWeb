@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { motion, useReducedMotion, useTransform } from "framer-motion";
-import type { MotionStyle, MotionValue } from "framer-motion";
+import { motion, useReducedMotion, useTransform } from 'framer-motion';
+import type { MotionStyle, MotionValue } from 'framer-motion';
 
-import type { AboutMeDTO } from "./aboutMe";
-import StackCardImage from "./StackCardImage";
+import type { AboutMeDTO } from './aboutMe';
+import StackCardImage from './StackCardImage';
 
 type StackCardProps = {
   content: AboutMeDTO;
@@ -40,25 +40,25 @@ export default function StackCard({
       style={{ zIndex: index + 1 }}
     >
       <motion.article
-        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[30px] border border-black/12 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform dark:border-white/18 dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20 sm:rounded-[38px] sm:p-6 md:rounded-[46px] md:p-8"
+        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[30px] border border-black/12 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform sm:rounded-[38px] sm:p-6 md:rounded-[46px] md:p-8 dark:border-white/18 dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20"
         style={cardStyle}
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">
-          <span className="font-black leading-none tracking-normal text-black/88 tabular-nums text-[clamp(3.5rem,9vw,120px)] dark:text-white/92">
+          <span className="text-[clamp(3.5rem,9vw,120px)] leading-none font-black tracking-normal text-black/88 tabular-nums dark:text-white/92">
             {content.number}
           </span>
           <div className="min-w-0">
-            <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.32em] text-black/48 dark:text-white/48 sm:text-sm">
+            <p className="mb-2 font-mono text-xs font-bold tracking-[0.32em] text-black/48 uppercase sm:text-sm dark:text-white/48">
               {content.category}
             </p>
-            <h3 className="text-pretty wrap-break-word text-3xl font-black uppercase leading-none tracking-normal sm:text-5xl md:text-6xl">
+            <h3 className="text-3xl leading-none font-black tracking-normal text-pretty wrap-break-word uppercase sm:text-5xl md:text-6xl">
               {content.name}
             </h3>
           </div>
           <div className="md:justify-self-end">
             <a
               href="#projects"
-              className="inline-flex rounded-full border-2 border-black/55 px-8 py-3 text-sm font-black uppercase tracking-widest text-black transition-colors hover:bg-black/8 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white dark:border-white/70 dark:text-white dark:hover:bg-white/12 dark:focus-visible:ring-white dark:focus-visible:ring-offset-[#0C0C0C] sm:px-10 sm:py-3.5 sm:text-base"
+              className="inline-flex rounded-full border-2 border-black/55 px-8 py-3 text-sm font-black tracking-widest text-black uppercase transition-colors hover:bg-black/8 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:px-10 sm:py-3.5 sm:text-base dark:border-white/70 dark:text-white dark:hover:bg-white/12 dark:focus-visible:ring-white dark:focus-visible:ring-offset-[#0C0C0C]"
             >
               Explore
             </a>
@@ -72,7 +72,7 @@ export default function StackCard({
 }
 
 function StackCardImages({ project }: { project: AboutMeDTO }) {
-  if (project.arrangement === "with-description") {
+  if (project.arrangement === 'with-description') {
     return (
       <div className="grid min-h-0 flex-1 content-start gap-6 md:grid-cols-[58fr_42fr] md:items-center md:gap-10">
         <StackCardImage
@@ -81,7 +81,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
           className="aspect-video min-h-0"
         />
         <div className="flex min-h-0 items-center justify-center">
-          <p className="max-w-100 text-pretty text-center text-base font-medium leading-relaxed text-black/74 dark:text-white/76 sm:text-lg md:text-left md:text-[clamp(1.05rem,1.55vw,1.65rem)] md:leading-snug">
+          <p className="max-w-100 text-center text-base leading-relaxed font-medium text-pretty text-black/74 sm:text-lg md:text-left md:text-[clamp(1.05rem,1.55vw,1.65rem)] md:leading-snug dark:text-white/76">
             {project.description}
           </p>
         </div>
@@ -89,7 +89,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
     );
   }
 
-  if (project.arrangement === "feature-left") {
+  if (project.arrangement === 'feature-left') {
     return (
       <div className="grid min-h-0 flex-1 gap-4 md:grid-cols-[58fr_42fr] md:gap-6">
         <StackCardImage
@@ -113,7 +113,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
     );
   }
 
-  if (project.arrangement === "mosaic") {
+  if (project.arrangement === 'mosaic') {
     const fourthImage = project.images[3];
 
     return (
@@ -140,7 +140,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
             className="min-h-35 md:min-h-0"
           />
         ) : (
-          <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] dark:border-white/12 dark:bg-white/[0.035] sm:rounded-[38px] md:block md:rounded-[46px]" />
+          <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] sm:rounded-[38px] md:block md:rounded-[46px] dark:border-white/12 dark:bg-white/[0.035]" />
         )}
       </div>
     );
@@ -164,7 +164,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
         src={project.images[2]}
         alt={`${project.name} preview`}
         className="min-h-55 md:min-h-0"
-        loading={project.number === "01" ? "eager" : "lazy"}
+        loading={project.number === '01' ? 'eager' : 'lazy'}
       />
     </div>
   );

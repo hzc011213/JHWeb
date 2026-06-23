@@ -1,45 +1,45 @@
 const experiences = [
   {
-    role: "Software Engineer (Frontend)",
-    company: "Nio Inc.",
-    location: "Beijing, China",
-    dates: "July 2024 - August 2025",
+    role: 'Software Engineer (Frontend)',
+    company: 'Nio Inc.',
+    location: 'Beijing, China',
+    dates: 'July 2024 - August 2025',
     points: [
-      "Built a platform supporting the full lifecycle of autonomous driving development, enabling data collection, annotation, model training, and deployment workflows for large-scale systems.",
-      "Developed an H5 web application used by 4000+ users, enabling real-time vehicle computing power sharing, reward systems, and security warnings.",
+      'Built a platform supporting the full lifecycle of autonomous driving development, enabling data collection, annotation, model training, and deployment workflows for large-scale systems.',
+      'Developed an H5 web application used by 4000+ users, enabling real-time vehicle computing power sharing, reward systems, and security warnings.',
     ],
   },
   {
-    role: "Full Stack Software Developer",
-    company: "Knowlecy",
-    location: "Toronto, Canada",
-    dates: "September 2023 - July 2024",
+    role: 'Full Stack Software Developer',
+    company: 'Knowlecy',
+    location: 'Toronto, Canada',
+    dates: 'September 2023 - July 2024',
     points: [
-      "Led end-to-end development of an AI research assistant based on the ChatGPT API, designing and building the backend and frontend from scratch while contributing over 80% of the code.",
-      "Optimized system architecture for performance and maintainability, supporting production-level scalability and reliability.",
-      "Collaborated with stakeholders to gather requirements and deliver features aligned with business objectives.",
+      'Led end-to-end development of an AI research assistant based on the ChatGPT API, designing and building the backend and frontend from scratch while contributing over 80% of the code.',
+      'Optimized system architecture for performance and maintainability, supporting production-level scalability and reliability.',
+      'Collaborated with stakeholders to gather requirements and deliver features aligned with business objectives.',
     ],
   },
   {
-    role: "Intern Full Stack Software Developer",
-    company: "Leadvisor",
-    location: "Hybrid",
-    dates: "December 2023 - July 2024",
+    role: 'Intern Full Stack Software Developer',
+    company: 'Leadvisor',
+    location: 'Hybrid',
+    dates: 'December 2023 - July 2024',
     points: [
-      "Developed and maintained full-stack features for the company web platform, including authentication, forum systems, and asset management modules.",
-      "Improved system performance by designing optimized data structures, reducing query time complexity to O(n).",
-      "Launched an autonomous legal service platform, supporting early-stage product deployment with legal professionals.",
+      'Developed and maintained full-stack features for the company web platform, including authentication, forum systems, and asset management modules.',
+      'Improved system performance by designing optimized data structures, reducing query time complexity to O(n).',
+      'Launched an autonomous legal service platform, supporting early-stage product deployment with legal professionals.',
     ],
   },
   {
-    role: "Intern Data Analyst",
-    company: "Shopee",
-    location: "Shanghai, China",
-    dates: "June 2023 - September 2023",
+    role: 'Intern Data Analyst',
+    company: 'Shopee',
+    location: 'Shanghai, China',
+    dates: 'June 2023 - September 2023',
     points: [
-      "Analyzed large-scale global datasets on Orders, Promotions, and Checkout (OPC) to identify business opportunities and guide product strategy.",
-      "Detected data inconsistencies and implemented monitoring processes to reduce business risk and improve data reliability.",
-      "Produced 4 in-depth analytical reports, each with 600+ lines of SQL, covering user behavior, A/B testing, and product performance.",
+      'Analyzed large-scale global datasets on Orders, Promotions, and Checkout (OPC) to identify business opportunities and guide product strategy.',
+      'Detected data inconsistencies and implemented monitoring processes to reduce business risk and improve data reliability.',
+      'Produced 4 in-depth analytical reports, each with 600+ lines of SQL, covering user behavior, A/B testing, and product performance.',
     ],
   },
 ];
@@ -49,10 +49,10 @@ export default function ExperiencePage() {
     <main className="min-h-screen bg-black text-white">
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-28 sm:px-10 lg:px-16">
         <div className="mb-14 max-w-3xl">
-          <p className="font-mono text-sm uppercase tracking-[0.24em] text-white/48">
+          <p className="font-mono text-sm tracking-[0.24em] text-white/48 uppercase">
             Experience
           </p>
-          <h1 className="mt-5 font-heading text-5xl font-semibold tracking-normal sm:text-7xl">
+          <h1 className="font-heading mt-5 text-5xl font-semibold tracking-normal sm:text-7xl">
             Building AI, data, and mobility products.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/62">
@@ -68,7 +68,7 @@ export default function ExperiencePage() {
               key={`${experience.company}-${experience.role}`}
             >
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/42">
+                <p className="font-mono text-xs tracking-[0.2em] text-white/42 uppercase">
                   {experience.dates}
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-normal">

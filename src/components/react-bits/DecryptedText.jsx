@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
 /* eslint-disable react-hooks/set-state-in-effect */
-import { useEffect, useState, useRef, useMemo, useCallback } from "react";
-import { motion } from "motion/react";
+import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import { motion } from 'motion/react';
 
 const styles = {
   wrapper: {
-    display: "inline-block",
-    whiteSpace: "pre-wrap",
+    display: 'inline-block',
+    whiteSpace: 'pre-wrap',
   },
   srOnly: {
-    position: "absolute",
-    width: "1px",
-    height: "1px",
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
     padding: 0,
-    margin: "-1px",
-    overflow: "hidden",
-    clip: "rect(0,0,0,0)",
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0,0,0,0)',
     border: 0,
   },
 };
@@ -26,22 +26,22 @@ export default function DecryptedText({
   speed = 50,
   maxIterations = 10,
   sequential = false,
-  revealDirection = "start",
+  revealDirection = 'start',
   useOriginalCharsOnly = false,
-  characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
-  className = "",
-  parentClassName = "",
-  encryptedClassName = "",
-  animateOn = "hover",
-  clickMode = "once",
+  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+  className = '',
+  parentClassName = '',
+  encryptedClassName = '',
+  animateOn = 'hover',
+  clickMode = 'once',
   ...props
 }) {
   const [displayText, setDisplayText] = useState(text);
   const [isAnimating, setIsAnimating] = useState(false);
   const [revealedIndices, setRevealedIndices] = useState(new Set());
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [isDecrypted, setIsDecrypted] = useState(animateOn !== "click");
-  const [direction, setDirection] = useState("forward");
+  const [isDecrypted, setIsDecrypted] = useState(animateOn !== 'click');
+  const [direction, setDirection] = useState('forward');
 
   const containerRef = useRef(null);
   const orderRef = useRef([]);
@@ -50,22 +50,22 @@ export default function DecryptedText({
 
   const availableChars = useMemo(() => {
     return useOriginalCharsOnly
-      ? Array.from(new Set(text.split(""))).filter((char) => char !== " ")
-      : characters.split("");
+      ? Array.from(new Set(text.split(''))).filter((char) => char !== ' ')
+      : characters.split('');
   }, [useOriginalCharsOnly, text, characters]);
 
   const shuffleText = useCallback(
     (originalText, currentRevealed) => {
       return originalText
-        .split("")
+        .split('')
         .map((char, i) => {
-          if (char === " ") return " ";
+          if (char === ' ') return ' ';
           if (currentRevealed.has(i)) return originalText[i];
           return availableChars[
             Math.floor(Math.random() * availableChars.length)
           ];
         })
-        .join("");
+        .join('');
     },
     [availableChars],
   );
@@ -74,11 +74,11 @@ export default function DecryptedText({
     (len) => {
       const order = [];
       if (len <= 0) return order;
-      if (revealDirection === "start") {
+      if (revealDirection === 'start') {
         for (let i = 0; i < len; i++) order.push(i);
         return order;
       }
-      if (revealDirection === "end") {
+      if (revealDirection === 'end') {
         for (let i = len - 1; i >= 0; i--) order.push(i);
         return order;
       }
@@ -130,7 +130,7 @@ export default function DecryptedText({
     } else {
       setRevealedIndices(new Set());
     }
-    setDirection("forward");
+    setDirection('forward');
     setIsAnimating(true);
   }, [sequential, computeOrder, text.length]);
 
@@ -146,7 +146,7 @@ export default function DecryptedText({
       setRevealedIndices(fillAllIndices());
       setDisplayText(shuffleText(text, fillAllIndices()));
     }
-    setDirection("reverse");
+    setDirection('reverse');
     setIsAnimating(true);
   }, [sequential, computeOrder, fillAllIndices, shuffleText, text]);
 
@@ -158,11 +158,11 @@ export default function DecryptedText({
     const getNextIndex = (revealedSet) => {
       const textLength = text.length;
       switch (revealDirection) {
-        case "start":
+        case 'start':
           return revealedSet.size;
-        case "end":
+        case 'end':
           return textLength - 1 - revealedSet.size;
-        case "center": {
+        case 'center': {
           const middle = Math.floor(textLength / 2);
           const offset = Math.floor(revealedSet.size / 2);
           const nextIndex =
@@ -190,7 +190,7 @@ export default function DecryptedText({
       setRevealedIndices((prevRevealed) => {
         if (sequential) {
           // Forward
-          if (direction === "forward") {
+          if (direction === 'forward') {
             if (prevRevealed.size < text.length) {
               const nextIndex = getNextIndex(prevRevealed);
               const newRevealed = new Set(prevRevealed);
@@ -205,7 +205,7 @@ export default function DecryptedText({
             }
           }
           // Reverse
-          if (direction === "reverse") {
+          if (direction === 'reverse') {
             if (pointerRef.current < orderRef.current.length) {
               const idxToRemove = orderRef.current[pointerRef.current++];
               const newRevealed = new Set(prevRevealed);
@@ -226,7 +226,7 @@ export default function DecryptedText({
           }
         } else {
           // Non-Sequential
-          if (direction === "forward") {
+          if (direction === 'forward') {
             setDisplayText(shuffleText(text, prevRevealed));
             currentIteration++;
             if (currentIteration >= maxIterations) {
@@ -239,7 +239,7 @@ export default function DecryptedText({
           }
 
           // Non-Sequential Reverse
-          if (direction === "reverse") {
+          if (direction === 'reverse') {
             let currentSet = prevRevealed;
             if (currentSet.size === 0) {
               currentSet = fillAllIndices();
@@ -284,19 +284,19 @@ export default function DecryptedText({
 
   /* Click Behaviour */
   const handleClick = () => {
-    if (animateOn !== "click") return;
+    if (animateOn !== 'click') return;
 
-    if (clickMode === "once") {
+    if (clickMode === 'once') {
       if (isDecrypted) return;
-      setDirection("forward");
+      setDirection('forward');
       triggerDecrypt();
     }
 
-    if (clickMode === "toggle") {
+    if (clickMode === 'toggle') {
       if (isDecrypted) {
         triggerReverse();
       } else {
-        setDirection("forward");
+        setDirection('forward');
         triggerDecrypt();
       }
     }
@@ -309,7 +309,7 @@ export default function DecryptedText({
     setRevealedIndices(new Set());
     setIsDecrypted(false);
     setDisplayText(text);
-    setDirection("forward");
+    setDirection('forward');
     setIsAnimating(true);
   }, [isAnimating, text]);
 
@@ -319,12 +319,12 @@ export default function DecryptedText({
     setRevealedIndices(new Set());
     setDisplayText(text);
     setIsDecrypted(true);
-    setDirection("forward");
+    setDirection('forward');
   }, [text]);
 
   /* View Observer */
   useEffect(() => {
-    if (animateOn !== "view" && animateOn !== "inViewHover") return;
+    if (animateOn !== 'view' && animateOn !== 'inViewHover') return;
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -337,7 +337,7 @@ export default function DecryptedText({
 
     const observerOptions = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.1,
     };
 
@@ -358,23 +358,23 @@ export default function DecryptedText({
   }, [animateOn, hasAnimated, triggerDecrypt]);
 
   useEffect(() => {
-    if (animateOn === "click") {
+    if (animateOn === 'click') {
       encryptInstantly();
     } else {
       setDisplayText(text);
       setIsDecrypted(true);
     }
     setRevealedIndices(new Set());
-    setDirection("forward");
+    setDirection('forward');
   }, [animateOn, text, encryptInstantly]);
 
   const animateProps =
-    animateOn === "hover" || animateOn === "inViewHover"
+    animateOn === 'hover' || animateOn === 'inViewHover'
       ? {
           onMouseEnter: triggerHoverDecrypt,
           onMouseLeave: resetToPlainText,
         }
-      : animateOn === "click"
+      : animateOn === 'click'
         ? {
             onClick: handleClick,
           }
@@ -391,7 +391,7 @@ export default function DecryptedText({
       <span style={styles.srOnly}>{displayText}</span>
 
       <span aria-hidden="true">
-        {displayText.split("").map((char, index) => {
+        {displayText.split('').map((char, index) => {
           const isRevealedOrDone =
             revealedIndices.has(index) || (!isAnimating && isDecrypted);
 

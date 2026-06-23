@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import CardSwap, { Card } from "@/components/react-bits/CardSwap";
+import CardSwap, { Card } from '@/components/react-bits/CardSwap';
 
-import type { ProductImageAsset } from "./ProductCard";
+import type { ProductImageAsset } from './ProductCard';
 
 type ProductImageSwapProps = {
   images: ProductImageAsset[];
@@ -30,7 +30,7 @@ export default function ProductImageSwap({ images }: ProductImageSwapProps) {
               alt={image.alt}
               width={1600}
               height={1000}
-              unoptimized={image.src.endsWith(".svg")}
+              unoptimized={image.src.endsWith('.svg')}
               className="h-full w-full rounded-[28px] object-contain"
             />
           </Card>

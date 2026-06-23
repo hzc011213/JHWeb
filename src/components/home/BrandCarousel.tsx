@@ -1,15 +1,15 @@
-import Image from "next/image";
-import type { ReactNode } from "react";
+import Image from 'next/image';
+import type { ReactNode } from 'react';
 
-import { KnowlecyLogo } from "@/components/home/KnowlecyLogo";
-import LogoLoop, { type LogoItem } from "@/components/react-bits/LogoLoop";
-import { cn } from "@/lib/utils";
+import { KnowlecyLogo } from '@/components/home/KnowlecyLogo';
+import LogoLoop, { type LogoItem } from '@/components/react-bits/LogoLoop';
+import { cn } from '@/lib/utils';
 
-import styles from "./BrandCarousel.module.css";
+import styles from './BrandCarousel.module.css';
 
 const toneClassNames = {
-  "dark-source": styles.darkSource,
-  "light-source": styles.lightSource,
+  'dark-source': styles.darkSource,
+  'light-source': styles.lightSource,
   color: undefined,
 };
 
@@ -18,7 +18,7 @@ function brandLogoNode(
   src: string,
   width: number,
   height: number,
-  tone: "dark-source" | "light-source" | "color",
+  tone: 'dark-source' | 'light-source' | 'color',
 ): ReactNode {
   return (
     <Image
@@ -35,41 +35,41 @@ function brandLogoNode(
 const brandLogos: LogoItem[] = [
   {
     node: brandLogoNode(
-      "Hyperduality",
-      "/assets/brand/hyperduality-logo.svg",
+      'Hyperduality',
+      '/assets/brand/hyperduality-logo.svg',
       232,
       40,
-      "dark-source",
+      'dark-source',
     ),
-    title: "Hyperduality",
+    title: 'Hyperduality',
   },
   {
     node: <KnowlecyLogo className={cn(styles.logo, styles.knowlecy)} />,
-    title: "Knowlecy",
+    title: 'Knowlecy',
   },
   {
     node: brandLogoNode(
-      "Leadvisor",
-      "/assets/brand/leadvisor-logo.svg",
+      'Leadvisor',
+      '/assets/brand/leadvisor-logo.svg',
       133,
       40,
-      "color",
+      'color',
     ),
-    title: "Leadvisor",
+    title: 'Leadvisor',
   },
   {
     node: brandLogoNode(
-      "NIO",
-      "/assets/brand/nio-logo-white.svg",
+      'NIO',
+      '/assets/brand/nio-logo-white.svg',
       112,
       40,
-      "light-source",
+      'light-source',
     ),
-    title: "NIO",
+    title: 'NIO',
   },
   {
-    src: "/assets/brand/shopee-logo.svg",
-    alt: "Shopee",
+    src: '/assets/brand/shopee-logo.svg',
+    alt: 'Shopee',
     width: 128,
     height: 40,
   },
@@ -80,7 +80,7 @@ export default function BrandCarousel() {
     <div
       className={cn(
         styles.root,
-        "mx-auto my-12 max-w-[min(calc(100vw-2rem),56rem)] overflow-hidden md:my-16",
+        'mx-auto my-12 max-w-[min(calc(100vw-2rem),56rem)] overflow-hidden md:my-16',
       )}
     >
       <h2 className={styles.title}>Proud to have impacted</h2>

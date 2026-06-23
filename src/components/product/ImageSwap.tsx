@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import gsap from "gsap";
-import Image from "next/image";
-import { createRef, memo, useEffect, useMemo, useRef } from "react";
+import gsap from 'gsap';
+import Image from 'next/image';
+import { createRef, memo, useEffect, useMemo, useRef } from 'react';
 
 type ImageSwapAsset = {
   src: string;
   alt: string;
 };
 
-export type ImageSwapOrientation = "left" | "right";
-export type ImageSwapLayout = "landscape" | "phone";
+export type ImageSwapOrientation = 'left' | 'right';
+export type ImageSwapLayout = 'landscape' | 'phone';
 
 type ImageSwapProps = {
   images: ImageSwapAsset[];
@@ -34,38 +34,38 @@ const SKEW_AMOUNT = 3;
 const imageSwapLayouts = {
   landscape: {
     frameClassName:
-      "relative mx-auto h-[480px] w-full max-w-220 overflow-visible sm:h-[570px] lg:h-[620px]",
+      'relative mx-auto h-[480px] w-full max-w-220 overflow-visible sm:h-[570px] lg:h-[620px]',
     stageClassName:
-      "absolute top-1/2 left-1/2 h-[min(50vw,440px)] w-[min(78vw,700px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px] max-md:scale-75 max-[480px]:scale-[0.55]",
-    width: "min(78vw, 700px)",
-    height: "min(50vw, 440px)",
+      'absolute top-1/2 left-1/2 h-[min(50vw,440px)] w-[min(78vw,700px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px] max-md:scale-75 max-[480px]:scale-[0.55]',
+    width: 'min(78vw, 700px)',
+    height: 'min(50vw, 440px)',
     imageWidth: 1600,
     imageHeight: 1000,
     horizontalDistance: 42,
     verticalDistance: 46,
     depthDistance: 63,
     dropDistance: 500,
-    sizes: "(max-width: 768px) 78vw, 700px",
+    sizes: '(max-width: 768px) 78vw, 700px',
   },
   phone: {
     frameClassName:
-      "relative mx-auto h-[330px] w-full max-w-96 overflow-visible sm:h-[430px] lg:h-[500px]",
+      'relative mx-auto h-[330px] w-full max-w-96 overflow-visible sm:h-[430px] lg:h-[500px]',
     stageClassName:
-      "absolute top-1/2 left-1/2 h-[min(91vw,540px)] w-[min(42vw,250px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px]",
-    width: "min(42vw, 250px)",
-    height: "min(91vw, 540px)",
+      'absolute top-1/2 left-1/2 h-[min(91vw,540px)] w-[min(42vw,250px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px]',
+    width: 'min(42vw, 250px)',
+    height: 'min(91vw, 540px)',
     imageWidth: 1206,
     imageHeight: 2622,
     horizontalDistance: 21,
     verticalDistance: 24,
     depthDistance: 32,
     dropDistance: 240,
-    sizes: "(max-width: 640px) 42vw, 250px",
+    sizes: '(max-width: 640px) 42vw, 250px',
   },
 } as const;
 
 const motionConfig = {
-  ease: "elastic.out(0.6,0.9)",
+  ease: 'elastic.out(0.6,0.9)',
   dropDuration: 2,
   moveDuration: 2,
   returnDuration: 2,
@@ -79,7 +79,7 @@ function makeSlot(
   orientation: ImageSwapOrientation,
   layoutConfig: (typeof imageSwapLayouts)[ImageSwapLayout],
 ): Slot {
-  const horizontalDirection = orientation === "left" ? 1 : -1;
+  const horizontalDirection = orientation === 'left' ? 1 : -1;
 
   return {
     x: index * layoutConfig.horizontalDistance * horizontalDirection,
@@ -100,8 +100,8 @@ function placeImage(
     z: slot.z,
     xPercent: -50,
     yPercent: -50,
-    skewY: orientation === "left" ? SKEW_AMOUNT : -SKEW_AMOUNT,
-    transformOrigin: "center center",
+    skewY: orientation === 'left' ? SKEW_AMOUNT : -SKEW_AMOUNT,
+    transformOrigin: 'center center',
     zIndex: slot.zIndex,
     force3D: true,
   });
@@ -109,8 +109,8 @@ function placeImage(
 
 function ImageSwap({
   images,
-  orientation = "left",
-  layout = "landscape",
+  orientation = 'left',
+  layout = 'landscape',
   pauseOnHover = false,
 }: ImageSwapProps) {
   const layoutConfig = imageSwapLayouts[layout];
@@ -172,7 +172,7 @@ function ImageSwap({
       });
 
       timeline.addLabel(
-        "promote",
+        'promote',
         `-=${motionConfig.dropDuration * motionConfig.promoteOverlap}`,
       );
 
@@ -185,7 +185,7 @@ function ImageSwap({
 
         const slot = makeSlot(slotIndex, total, orientation, layoutConfig);
 
-        timeline.set(element, { zIndex: slot.zIndex }, "promote");
+        timeline.set(element, { zIndex: slot.zIndex }, 'promote');
         timeline.to(
           element,
           {
@@ -202,7 +202,7 @@ function ImageSwap({
       const backSlot = makeSlot(total - 1, total, orientation, layoutConfig);
 
       timeline.addLabel(
-        "return",
+        'return',
         `promote+=${motionConfig.moveDuration * motionConfig.returnDelay}`,
       );
       timeline.call(
@@ -210,7 +210,7 @@ function ImageSwap({
           gsap.set(frontElement, { zIndex: backSlot.zIndex });
         },
         undefined,
-        "return",
+        'return',
       );
       timeline.to(
         frontElement,
@@ -221,7 +221,7 @@ function ImageSwap({
           duration: motionConfig.returnDuration,
           ease: motionConfig.ease,
         },
-        "return",
+        'return',
       );
       timeline.call(() => {
         orderRef.current = [...rest, front];
@@ -229,7 +229,7 @@ function ImageSwap({
     };
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      '(prefers-reduced-motion: reduce)',
     ).matches;
 
     if (!prefersReducedMotion && total > 1) {
@@ -252,14 +252,14 @@ function ImageSwap({
     };
 
     if (pauseOnHover) {
-      node?.addEventListener("mouseenter", pause);
-      node?.addEventListener("mouseleave", resume);
+      node?.addEventListener('mouseenter', pause);
+      node?.addEventListener('mouseleave', resume);
     }
 
     return () => {
       if (pauseOnHover) {
-        node?.removeEventListener("mouseenter", pause);
-        node?.removeEventListener("mouseleave", resume);
+        node?.removeEventListener('mouseenter', pause);
+        node?.removeEventListener('mouseleave', resume);
       }
       clearSwapInterval();
       timelineRef.current?.kill();
@@ -269,15 +269,12 @@ function ImageSwap({
 
   return (
     <div className={layoutConfig.frameClassName}>
-      <div
-        ref={containerRef}
-        className={layoutConfig.stageClassName}
-      >
+      <div ref={containerRef} className={layoutConfig.stageClassName}>
         {images.map((image, index) => (
           <div
             key={image.src}
             ref={imageRefs[index]}
-            className="absolute top-1/2 left-1/2 [backface-visibility:hidden] [transform-style:preserve-3d] will-change-transform"
+            className="absolute top-1/2 left-1/2 will-change-transform backface-hidden transform-3d"
             style={{ width: layoutConfig.width, height: layoutConfig.height }}
           >
             <Image
@@ -286,7 +283,7 @@ function ImageSwap({
               width={layoutConfig.imageWidth}
               height={layoutConfig.imageHeight}
               sizes={layoutConfig.sizes}
-              unoptimized={image.src.endsWith(".svg")}
+              unoptimized={image.src.endsWith('.svg')}
               className="h-full w-full object-contain"
             />
           </div>

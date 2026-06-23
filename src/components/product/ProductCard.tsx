@@ -1,12 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import ImageSwap, { type ImageSwapLayout } from "./ImageSwap";
-import ProductBlurText from "./ProductBlurText";
-import ProductTitle from "./ProductTitle";
+import ImageSwap, { type ImageSwapLayout } from './ImageSwap';
+import ProductBlurText from './ProductBlurText';
+import ProductTitle from './ProductTitle';
 
-export type ProductAlignment = "image-left" | "image-right";
+export type ProductAlignment = 'image-left' | 'image-right';
 
 export type ProductImageAsset = {
   src: string;
@@ -31,24 +31,24 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const imageFirst = product.alignment === "image-left";
+  const imageFirst = product.alignment === 'image-left';
 
   return (
     <article
       className={cn(
-        "group grid items-center gap-8 lg:gap-12",
+        'group grid items-center gap-8 lg:gap-12',
         imageFirst
-          ? "lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)]"
-          : "lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)]",
+          ? 'lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)]'
+          : 'lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)]',
       )}
     >
       <ProductImage
         product={product}
-        className={imageFirst ? "lg:order-1" : "lg:order-2"}
+        className={imageFirst ? 'lg:order-1' : 'lg:order-2'}
       />
       <ProductContent
         product={product}
-        className={imageFirst ? "lg:order-2" : "lg:order-1"}
+        className={imageFirst ? 'lg:order-2' : 'lg:order-1'}
       />
     </article>
   );
@@ -62,20 +62,18 @@ function ProductContent({
   className?: string;
 }) {
   return (
-    <div className={cn("max-w-2xl py-2 lg:px-4", className)}>
+    <div className={cn('max-w-2xl py-2 lg:px-4', className)}>
       <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-black/[0.025] px-4 py-2 text-black/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] transition-colors duration-500 dark:border-white/10 dark:bg-white/[0.035] dark:text-[#b8beb6] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
         <span
           aria-hidden="true"
           className={cn(
-            "h-2 w-2 rounded-full",
-            product.isPresent
-              ? "bg-[#3BE478]"
-              : "bg-[#5b2ad5]",
+            'h-2 w-2 rounded-full',
+            product.isPresent ? 'bg-[#3BE478]' : 'bg-[#5b2ad5]',
           )}
         />
         <ProductBlurText
           text={product.date}
-          className="font-mono text-xs uppercase tracking-[0.2em]"
+          className="font-mono text-xs tracking-[0.2em] uppercase"
           animateBy="letters"
           stepDuration={0.25}
         />
@@ -115,11 +113,11 @@ function ProductImage({
       : [{ src: product.image, alt: product.imageAlt }];
 
   return (
-    <div className={cn("flex items-center justify-center", className)}>
+    <div className={cn('flex items-center justify-center', className)}>
       {images.length > 1 ? (
         <ImageSwap
           images={images}
-          orientation={product.alignment === "image-left" ? "right" : "left"}
+          orientation={product.alignment === 'image-left' ? 'right' : 'left'}
           layout={product.imageSwapLayout}
         />
       ) : (
@@ -128,7 +126,7 @@ function ProductImage({
           alt={images[0].alt}
           width={1600}
           height={1000}
-          unoptimized={images[0].src.endsWith(".svg")}
+          unoptimized={images[0].src.endsWith('.svg')}
           className="w-full max-w-220 rounded-[28px] object-contain transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1 sm:rounded-[34px]"
         />
       )}

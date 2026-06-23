@@ -12,7 +12,7 @@
 }
 
 .card-spotlight::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 0;
   top: 0;
