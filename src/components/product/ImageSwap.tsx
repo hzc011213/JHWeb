@@ -44,21 +44,23 @@ const imageSwapLayouts = {
     horizontalDistance: 42,
     verticalDistance: 46,
     depthDistance: 63,
+    dropDistance: 500,
     sizes: "(max-width: 768px) 78vw, 700px",
   },
   phone: {
     frameClassName:
-      "relative mx-auto h-[430px] w-full max-w-124 overflow-visible sm:h-[560px] lg:h-[640px]",
+      "relative mx-auto h-[330px] w-full max-w-96 overflow-visible sm:h-[430px] lg:h-[500px]",
     stageClassName:
-      "absolute top-1/2 left-1/2 h-[min(109vw,652px)] w-[min(50vw,300px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px]",
-    width: "min(50vw, 300px)",
-    height: "min(109vw, 652px)",
+      "absolute top-1/2 left-1/2 h-[min(91vw,540px)] w-[min(42vw,250px)] origin-center -translate-x-1/2 -translate-y-1/2 overflow-visible [perspective:900px]",
+    width: "min(42vw, 250px)",
+    height: "min(91vw, 540px)",
     imageWidth: 1206,
     imageHeight: 2622,
-    horizontalDistance: 26,
-    verticalDistance: 30,
-    depthDistance: 38,
-    sizes: "(max-width: 640px) 50vw, 300px",
+    horizontalDistance: 21,
+    verticalDistance: 24,
+    depthDistance: 32,
+    dropDistance: 240,
+    sizes: "(max-width: 640px) 42vw, 250px",
   },
 } as const;
 
@@ -164,7 +166,7 @@ function ImageSwap({
       timelineRef.current = timeline;
 
       timeline.to(frontElement, {
-        y: "+=500",
+        y: `+=${layoutConfig.dropDistance}`,
         duration: motionConfig.dropDuration,
         ease: motionConfig.ease,
       });
