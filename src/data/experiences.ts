@@ -1,7 +1,8 @@
 export interface ExperienceDetailDTO {
-  role: string;
   company: string;
   location: string;
+  website?: string;
+  role: string;
   dates: string;
   points: string[];
   images?: string[];
@@ -9,9 +10,10 @@ export interface ExperienceDetailDTO {
 
 export const experiences: ExperienceDetailDTO[] = [
   {
-    role: 'Software Engineer (Frontend)',
     company: 'Nio Inc.',
     location: 'Beijing, China',
+    website: 'https://www.nio.com/',
+    role: 'Software Engineer (Frontend)',
     dates: 'July 2024 - August 2025',
     points: [
       'Built a platform supporting the full lifecycle of autonomous driving development, enabling data collection, annotation, model training, and deployment workflows for large-scale systems.',
@@ -19,9 +21,10 @@ export const experiences: ExperienceDetailDTO[] = [
     ],
   },
   {
-    role: 'Full Stack Software Developer',
     company: 'Knowlecy',
     location: 'Toronto, Canada',
+    website: 'https://www.linkedin.com/company/knowlecy/posts/',
+    role: 'Full Stack Software Developer',
     dates: 'September 2023 - July 2024',
     points: [
       'Led end-to-end development of an AI research assistant based on the ChatGPT API, designing and building the backend and frontend from scratch while contributing over 80% of the code.',
@@ -30,9 +33,10 @@ export const experiences: ExperienceDetailDTO[] = [
     ],
   },
   {
-    role: 'Intern Full Stack Software Developer',
     company: 'Leadvisor',
     location: 'Hybrid',
+    website: 'https://www.leadvisor.net/en',
+    role: 'Intern Full Stack Software Developer',
     dates: 'December 2023 - July 2024',
     points: [
       'Developed and maintained full-stack features for the company web platform, including authentication, forum systems, and asset management modules.',
@@ -41,9 +45,10 @@ export const experiences: ExperienceDetailDTO[] = [
     ],
   },
   {
-    role: 'Intern Data Analyst',
     company: 'Shopee',
     location: 'Shanghai, China',
+    website: 'https://shopee.com/',
+    role: 'Intern Data Analyst',
     dates: 'June 2023 - September 2023',
     points: [
       'Analyzed large-scale global datasets on Orders, Promotions, and Checkout (OPC) to identify business opportunities and guide product strategy.',
