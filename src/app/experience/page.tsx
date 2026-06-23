@@ -1,52 +1,8 @@
-const experiences = [
-  {
-    role: 'Software Engineer (Frontend)',
-    company: 'Nio Inc.',
-    location: 'Beijing, China',
-    dates: 'July 2024 - August 2025',
-    points: [
-      'Built a platform supporting the full lifecycle of autonomous driving development, enabling data collection, annotation, model training, and deployment workflows for large-scale systems.',
-      'Developed an H5 web application used by 4000+ users, enabling real-time vehicle computing power sharing, reward systems, and security warnings.',
-    ],
-  },
-  {
-    role: 'Full Stack Software Developer',
-    company: 'Knowlecy',
-    location: 'Toronto, Canada',
-    dates: 'September 2023 - July 2024',
-    points: [
-      'Led end-to-end development of an AI research assistant based on the ChatGPT API, designing and building the backend and frontend from scratch while contributing over 80% of the code.',
-      'Optimized system architecture for performance and maintainability, supporting production-level scalability and reliability.',
-      'Collaborated with stakeholders to gather requirements and deliver features aligned with business objectives.',
-    ],
-  },
-  {
-    role: 'Intern Full Stack Software Developer',
-    company: 'Leadvisor',
-    location: 'Hybrid',
-    dates: 'December 2023 - July 2024',
-    points: [
-      'Developed and maintained full-stack features for the company web platform, including authentication, forum systems, and asset management modules.',
-      'Improved system performance by designing optimized data structures, reducing query time complexity to O(n).',
-      'Launched an autonomous legal service platform, supporting early-stage product deployment with legal professionals.',
-    ],
-  },
-  {
-    role: 'Intern Data Analyst',
-    company: 'Shopee',
-    location: 'Shanghai, China',
-    dates: 'June 2023 - September 2023',
-    points: [
-      'Analyzed large-scale global datasets on Orders, Promotions, and Checkout (OPC) to identify business opportunities and guide product strategy.',
-      'Detected data inconsistencies and implemented monitoring processes to reduce business risk and improve data reliability.',
-      'Produced 4 in-depth analytical reports, each with 600+ lines of SQL, covering user behavior, A/B testing, and product performance.',
-    ],
-  },
-];
+import { experiences } from '@/data/experiences';
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen bg-foreground text-white">
+    <main className="bg-foreground min-h-screen text-white">
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-28 sm:px-10 lg:px-16">
         <div className="mb-14 max-w-3xl">
           <p className="font-mono text-sm tracking-[0.24em] text-white/48 uppercase">
@@ -84,7 +40,7 @@ export default function ExperiencePage() {
                   <li className="flex gap-3" key={point}>
                     <span
                       aria-hidden="true"
-                      className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-background/70"
+                      className="bg-background/70 mt-3 h-1.5 w-1.5 shrink-0 rounded-full"
                     />
                     <span>{point}</span>
                   </li>

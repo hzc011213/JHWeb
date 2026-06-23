@@ -1,6 +1,23 @@
-import type { ProductCardItem } from '@/components/product/ProductCard';
+export type ProductAlignment = 'image-left' | 'image-right';
 
-export const products: ProductCardItem[] = [
+export type ProductImageAsset = {
+  src: string;
+  alt: string;
+};
+
+export type ProductDetailDTO = {
+  name: string;
+  company: string;
+  date: string;
+  isPresent: boolean;
+  image: string;
+  imageAlt: string;
+  images?: ProductImageAsset[];
+  alignment: ProductAlignment;
+  description: string[];
+};
+
+export const products: ProductDetailDTO[] = [
   {
     name: 'Yard Mobile App',
     company: 'Hyperduality',
