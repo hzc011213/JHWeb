@@ -13,10 +13,11 @@ export type ProductImageAsset = {
   alt: string;
 };
 
-export type ProductCardProduct = {
+export type ProductCardItem = {
   name: string;
   company: string;
   date: string;
+  isPresent: boolean;
   image: string;
   imageAlt: string;
   images?: ProductImageAsset[];
@@ -26,7 +27,7 @@ export type ProductCardProduct = {
 };
 
 type ProductCardProps = {
-  product: ProductCardProduct;
+  product: ProductCardItem;
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
@@ -57,15 +58,20 @@ function ProductContent({
   product,
   className,
 }: {
-  product: ProductCardProduct;
+  product: ProductCardItem;
   className?: string;
 }) {
   return (
     <div className={cn("max-w-2xl py-2 lg:px-4", className)}>
-      <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-[#b8beb6] shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
+      <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-black/[0.025] px-4 py-2 text-black/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] transition-colors duration-500 dark:border-white/10 dark:bg-white/[0.035] dark:text-[#b8beb6] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
         <span
           aria-hidden="true"
-          className="h-2 w-2 rounded-full bg-[#9fb8b2]"
+          className={cn(
+            "h-2 w-2 rounded-full",
+            product.isPresent
+              ? "bg-[#3BE478]"
+              : "bg-[#5b2ad5]",
+          )}
         />
         <ProductBlurText
           text={product.date}
@@ -79,15 +85,15 @@ function ProductContent({
 
       <ProductBlurText
         text={product.company}
-        className="mt-5 text-xl font-medium text-[#dce2da]"
+        className="mt-5 text-xl font-medium text-black/78 dark:text-[#dce2da]"
       />
 
-      <div className="mt-8 space-y-5 text-base leading-8 text-[#a8ada6]">
+      <div className="mt-8 space-y-5 text-base leading-8 text-black/62 dark:text-[#a8ada6]">
         {product.description.map((paragraph) => (
           <ProductBlurText
             key={paragraph}
             text={paragraph}
-            className="text-base leading-8 text-[#a8ada6]"
+            className="text-base leading-8 text-black/62 dark:text-[#a8ada6]"
             stepDuration={0.3}
           />
         ))}
@@ -100,7 +106,7 @@ function ProductImage({
   product,
   className,
 }: {
-  product: ProductCardProduct;
+  product: ProductCardItem;
   className?: string;
 }) {
   const images =

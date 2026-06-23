@@ -1,10 +1,11 @@
-import type { ProductCardProduct } from "@/components/product/ProductCard";
+import type { ProductCardItem } from "@/components/product/ProductCard";
 
-export const products: ProductCardProduct[] = [
+export const products: ProductCardItem[] = [
   {
     name: "Yard Mobile App",
     company: "Hyperduality",
     date: "November 2025 - Present",
+    isPresent: true,
     image: "/assets/product/yard-all.svg",
     imageAlt: "Yard mobile marketplace screens",
     images: [
@@ -37,6 +38,7 @@ export const products: ProductCardProduct[] = [
     name: "Zero-stock Catering Platform",
     company: "Hyperduality",
     date: "October 2025 - Present",
+    isPresent: true,
     image: "/assets/product/zero-stock.png",
     imageAlt: "Zero-stock Catering Platform dashboard",
     alignment: "image-right",
@@ -49,6 +51,7 @@ export const products: ProductCardProduct[] = [
     name: "Task Orchestration",
     company: "Nio",
     date: "June 2025 - August 2025",
+    isPresent: false,
     image: "/assets/product/task-orch.png",
     imageAlt: "Task Orchestration scheduling diagram",
     alignment: "image-left",
@@ -61,6 +64,7 @@ export const products: ProductCardProduct[] = [
     name: "AI Production Line",
     company: "Nio",
     date: "December 2024 - March 2025",
+    isPresent: false,
     image: "/assets/product/aipl.png",
     imageAlt: "AI Production Line model lifecycle diagram",
     alignment: "image-right",
