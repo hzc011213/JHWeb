@@ -2,7 +2,7 @@
 
 import BlurText from '@/components/react-bits/BlurText';
 
-type ProductBlurTextProps = {
+type FastBlurTextProps = {
   text: string;
   className: string;
   animateBy?: 'words' | 'letters';
@@ -11,14 +11,14 @@ type ProductBlurTextProps = {
   stepDuration?: number;
 };
 
-export default function ProductBlurText({
+export default function FastBlurText({
   text,
   className,
   animateBy = 'words',
-  delay = 10,
+  delay = 1,
   direction = 'bottom',
   stepDuration = 0.2,
-}: ProductBlurTextProps) {
+}: FastBlurTextProps) {
   return (
     <BlurText
       text={text}

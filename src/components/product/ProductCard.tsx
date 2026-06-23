@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import ProductBlurText from './ProductBlurText';
+import ProductBlurText from '../FastBlurText';
 import ProductImageCarousel from './ProductImageCarousel';
 import ProductTitle from './ProductTitle';
 import { ProductDetailDTO } from '@/data/products';
+import FastBlurText from '../FastBlurText';
 
 type ProductCardProps = {
   product: ProductDetailDTO;
@@ -50,7 +51,7 @@ function ProductContent({
             product.isPresent ? 'bg-[#3BE478]' : 'bg-[#5b2ad5]',
           )}
         />
-        <ProductBlurText
+        <FastBlurText
           text={product.date}
           className="font-mono text-xs tracking-[0.2em] uppercase"
           animateBy="letters"
