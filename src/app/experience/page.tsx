@@ -46,7 +46,7 @@ const experiences = [
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-foreground text-white">
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-28 sm:px-10 lg:px-16">
         <div className="mb-14 max-w-3xl">
           <p className="font-mono text-sm tracking-[0.24em] text-white/48 uppercase">
@@ -84,7 +84,7 @@ export default function ExperiencePage() {
                   <li className="flex gap-3" key={point}>
                     <span
                       aria-hidden="true"
-                      className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70"
+                      className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-background/70"
                     />
                     <span>{point}</span>
                   </li>

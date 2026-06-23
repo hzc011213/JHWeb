@@ -15,7 +15,7 @@ export default function StackCardImage({
 }: StackCardImageProps) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[40px] bg-black/8 sm:rounded-[50px] md:rounded-[60px] dark:bg-white/8 ${className}`}
+      className={`relative overflow-hidden rounded-[40px] bg-foreground/8 sm:rounded-[50px] md:rounded-[60px] dark:bg-foreground/8 ${className}`}
     >
       <Image
         src={src}

@@ -40,7 +40,7 @@ export default function StackCard({
       style={{ zIndex: index + 1 }}
     >
       <motion.article
-        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[30px] border border-black/12 bg-white p-4 text-black shadow-2xl shadow-black/10 will-change-transform sm:rounded-[38px] sm:p-6 md:rounded-[46px] md:p-8 dark:border-white/18 dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20"
+        className="relative flex h-[85vh] origin-top flex-col overflow-hidden rounded-[30px] border border-black/12 bg-background p-4 text-black shadow-2xl shadow-black/10 will-change-transform sm:rounded-[38px] sm:p-6 md:rounded-[46px] md:p-8 dark:border-white/18 dark:bg-[#0C0C0C] dark:text-white dark:shadow-black/20"
         style={cardStyle}
       >
         <div className="mb-4 grid shrink-0 items-end gap-4 sm:mb-5 md:grid-cols-[auto_1fr_auto] md:gap-8">
@@ -58,7 +58,7 @@ export default function StackCard({
           <div className="md:justify-self-end">
             <a
               href="#projects"
-              className="inline-flex rounded-full border-2 border-black/55 px-8 py-3 text-sm font-black tracking-widest text-black uppercase transition-colors hover:bg-black/8 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:px-10 sm:py-3.5 sm:text-base dark:border-white/70 dark:text-white dark:hover:bg-white/12 dark:focus-visible:ring-white dark:focus-visible:ring-offset-[#0C0C0C]"
+              className="inline-flex rounded-full border-2 border-black/55 px-8 py-3 text-sm font-black tracking-widest text-black uppercase transition-colors hover:bg-foreground/8 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:px-10 sm:py-3.5 sm:text-base dark:border-white/70 dark:text-white dark:hover:bg-foreground/12 dark:focus-visible:ring-white dark:focus-visible:ring-offset-[#0C0C0C]"
             >
               Explore
             </a>
@@ -140,7 +140,7 @@ function StackCardImages({ project }: { project: AboutMeDTO }) {
             className="min-h-35 md:min-h-0"
           />
         ) : (
-          <div className="hidden rounded-[30px] border border-black/10 bg-black/[0.035] sm:rounded-[38px] md:block md:rounded-[46px] dark:border-white/12 dark:bg-white/[0.035]" />
+          <div className="hidden rounded-[30px] border border-black/10 bg-foreground/[0.035] sm:rounded-[38px] md:block md:rounded-[46px] dark:border-white/12 dark:bg-foreground/[0.035]" />
         )}
       </div>
     );

@@ -26,11 +26,11 @@ export default function Home() {
   });
 
   return (
-    <main className="bg-white dark:bg-black">
+    <main className="bg-background dark:bg-background">
       <div className="min-h-dvhflow-hidden relative bg-[image:url('/assets/home-background-light.png')] bg-cover bg-center text-[#050505] transition-[background-image,color] duration-500 dark:bg-[url('/assets/home-background-dark.png')] dark:text-white">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-white/8 transition-colors dark:bg-black/20"
+          className="absolute inset-0 bg-background/8 transition-colors dark:bg-background/20"
         />
         <section className="relative z-10 flex min-h-dvh items-center justify-center px-6 pb-36 text-center sm:pb-28">
           <div className="flex flex-col items-center gap-5">
@@ -60,7 +60,7 @@ export default function Home() {
       <BrandCarousel />
       <section
         id="projects"
-        className="relative z-10 mt-8 scroll-mt-24 rounded-t-[40px] bg-white px-5 py-20 text-black sm:mt-16 sm:rounded-t-[50px] sm:px-8 md:mt-20 md:scroll-mt-32 md:rounded-t-[60px] md:px-10 dark:bg-black dark:text-white"
+        className="relative z-10 mt-8 scroll-mt-24 rounded-t-[40px] bg-background px-5 py-20 text-black sm:mt-16 sm:rounded-t-[50px] sm:px-8 md:mt-20 md:scroll-mt-32 md:rounded-t-[60px] md:px-10 dark:bg-background dark:text-white"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-24 max-w-4xl text-center text-black md:mb-30 dark:text-white">

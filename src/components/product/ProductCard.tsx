@@ -62,7 +62,7 @@ function ProductContent({
 }) {
   return (
     <div className={cn('max-w-2xl py-2 lg:px-4', className)}>
-      <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-black/[0.025] px-4 py-2 text-black/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] transition-colors duration-500 dark:border-white/10 dark:bg-white/[0.035] dark:text-[#b8beb6] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
+      <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-foreground/[0.025] px-4 py-2 text-black/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] transition-colors duration-500 dark:border-white/10 dark:bg-foreground/[0.035] dark:text-[#b8beb6] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
         <span
           aria-hidden="true"
           className={cn(
