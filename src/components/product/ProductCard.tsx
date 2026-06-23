@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 import ProductBlurText from './ProductBlurText';
-import ProductImageSwap from './ProductImageSwap';
+import ProductImageCarousel from './ProductImageCarousel';
 import ProductTitle from './ProductTitle';
 
 export type ProductAlignment = 'image-left' | 'image-right';
@@ -114,7 +114,7 @@ function ProductImage({
   return (
     <div className={cn('flex items-center justify-center', className)}>
       {images.length > 1 ? (
-        <ProductImageSwap images={images} />
+        <ProductImageCarousel images={images} />
       ) : (
         <Image
           src={images[0].src}
