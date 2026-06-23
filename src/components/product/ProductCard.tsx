@@ -54,7 +54,6 @@ function ProductContent({
           text={product.date}
           className="font-mono text-xs tracking-[0.2em] uppercase"
           animateBy="letters"
-          stepDuration={0.25}
         />
       </div>
 

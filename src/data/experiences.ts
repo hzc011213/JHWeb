@@ -12,12 +12,19 @@ export const experiences: ExperienceDetailDTO[] = [
   {
     company: 'Nio Inc.',
     location: 'Beijing, China',
-    website: 'https://www.nio.com/',
+    website: 'https://www.nio.com/innovation#intelligentDriving',
     role: 'Software Engineer (Frontend)',
     dates: 'July 2024 - August 2025',
     points: [
       'Built a platform supporting the full lifecycle of autonomous driving development, enabling data collection, annotation, model training, and deployment workflows for large-scale systems.',
       'Developed an H5 web application used by 4000+ users, enabling real-time vehicle computing power sharing, reward systems, and security warnings.',
+    ],
+    images: [
+      '/assets/brand/nio-ad-desktop.mp4',
+      '/assets/brand/nio-et5-desktop.jpg',
+      '/assets/brand/nio-et5t-desktop.jpg',
+      '/assets/brand/nio-et9-desktop.jpg',
+      '/assets/brand/nio-et5-desktop.jpg',
     ],
   },
   {

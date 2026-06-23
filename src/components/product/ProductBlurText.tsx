@@ -17,7 +17,7 @@ export default function ProductBlurText({
   animateBy = 'words',
   delay = 10,
   direction = 'bottom',
-  stepDuration,
+  stepDuration = 0.2,
 }: ProductBlurTextProps) {
   return (
     <BlurText
