@@ -26,7 +26,6 @@ export const products: ProductCardItem[] = [
         alt: 'Yard mobile app publish screen',
       },
     ],
-    imageSwapLayout: 'phone',
     alignment: 'image-left',
     description: [
       'Built a cross-platform iOS and Android mobile marketplace, enabling a 30-second listing flow and location-based discovery.',

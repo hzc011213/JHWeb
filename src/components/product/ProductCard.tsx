@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
-import ImageSwap, { type ImageSwapLayout } from './ImageSwap';
 import ProductBlurText from './ProductBlurText';
+import ProductImageSwap from './ProductImageSwap';
 import ProductTitle from './ProductTitle';
 
 export type ProductAlignment = 'image-left' | 'image-right';
@@ -21,7 +21,6 @@ export type ProductCardItem = {
   image: string;
   imageAlt: string;
   images?: ProductImageAsset[];
-  imageSwapLayout?: ImageSwapLayout;
   alignment: ProductAlignment;
   description: string[];
 };
@@ -115,11 +114,7 @@ function ProductImage({
   return (
     <div className={cn('flex items-center justify-center', className)}>
       {images.length > 1 ? (
-        <ImageSwap
-          images={images}
-          orientation={product.alignment === 'image-left' ? 'right' : 'left'}
-          layout={product.imageSwapLayout}
-        />
+        <ProductImageSwap images={images} />
       ) : (
         <Image
           src={images[0].src}

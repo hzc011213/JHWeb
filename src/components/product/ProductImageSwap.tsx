@@ -12,19 +12,19 @@ type ProductImageSwapProps = {
 
 export default function ProductImageSwap({ images }: ProductImageSwapProps) {
   return (
-    <div className="relative mx-auto h-[430px] w-full max-w-[760px] overflow-visible sm:h-[520px] lg:h-[560px]">
+    <div className="relative mx-auto h-100 w-full overflow-visible">
       <CardSwap
-        width="min(72vw, 620px)"
-        height="min(45vw, 390px)"
-        cardDistance={42}
-        verticalDistance={46}
-        delay={4200}
-        pauseOnHover
-        skewAmount={3}
-        easing="elastic"
+        cardDistance={-10}
+        verticalDistance={30}
+        delay={3000}
+        pauseOnHover={false}
+        skewAmount={-6}
       >
         {images.map((image) => (
-          <Card key={image.src} customClass="bg-transparent">
+          <Card
+            key={image.src}
+            customClass="overflow-hidden bg-transparent! shadow-none! border-0!"
+          >
             <Image
               src={image.src}
               alt={image.alt}

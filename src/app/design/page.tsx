@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import CardSwap, { Card } from '@/components/react-bits/CardSwap';
 
@@ -7,10 +7,11 @@ export default function DesignPage() {
     <main>
       <div style={{ height: '600px', position: 'relative' }}>
         <CardSwap
-          cardDistance={60}
-          verticalDistance={70}
-          delay={5000}
+          cardDistance={-10}
+          verticalDistance={30}
+          delay={3000}
           pauseOnHover={false}
+          skewAmount={-10}
         >
           <Card>
             <h3>Card 1</h3>
