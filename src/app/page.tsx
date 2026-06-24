@@ -9,6 +9,7 @@ import StackCard from '@/components/home/StackCard';
 import { aboutMe } from '@/data/aboutMe';
 import DecryptedText from '@/components/react-bits/DecryptedText';
 import ScrollFloat from '@/components/react-bits/ScrollFloat';
+import ScrollReveal from '@/components/react-bits/ScrollReveal';
 import TextType from '@/components/react-bits/TextType';
 
 const TextTypeComponent = TextType as ComponentType<Record<string, unknown>>;
@@ -75,20 +76,19 @@ export default function Home() {
               About Me
             </ScrollFloat>
             <PortraitGallery />
-            <ScrollFloat
-              animationDuration={1}
-              ease="back.inOut(2)"
-              scrollStart="center bottom+=36%"
-              scrollEnd="bottom bottom-=28%"
-              splitBy="word"
-              stagger={0.018}
-              containerClassName="mx-auto mt-30 max-w-3xl text-black/66 dark:text-white/68"
-              textClassName="!text-[clamp(0.98rem,1.35vw,1.18rem)] !font-medium !leading-relaxed"
+            <ScrollReveal
+              enableBlur
+              baseRotation={0}
+              baseOpacity={0.1}
+              blurStrength={0}
+              wordAnimationEnd="bottom center"
+              containerClassName="mx-auto !my-48 max-w-3xl"
+              textClassName="!text-[clamp(1.35rem,2.4vw,2.35rem)] !font-medium !leading-relaxed text-foreground"
             >
               {
                 "Always learning, always building. Driven by curiosity and a belief that great ideas deserve to be brought to life. This portfolio is a collection of the things I've created, explored, and learned along the way."
               }
-            </ScrollFloat>
+            </ScrollReveal>
           </div>
           <div
             ref={containerRef}

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import ProductBlurText from '../FastBlurText';
-import ProductImageCarousel from './ProductImageCarousel';
-import ProductTitle from './ProductTitle';
+import ProductImageCarousel from '../product/ProductImageCarousel';
+import ProductTitle from '../product/ProductTitle';
 import { ProductDetailDTO } from '@/data/products';
 import FastBlurText from '../FastBlurText';
 
