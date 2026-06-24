@@ -48,6 +48,7 @@ export default function ExperiencePage() {
                     <FastBlurText
                       className="text-base leading-7 text-black/62 dark:text-[#d0d5cd]"
                       text={point}
+                      stepDuration={0.3}
                     />
                   </li>
                 ))}

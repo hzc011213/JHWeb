@@ -15,9 +15,9 @@ export default function FastBlurText({
   text,
   className,
   animateBy = 'words',
-  delay = 1,
+  delay = 50,
   direction = 'bottom',
-  stepDuration = 0.2,
+  stepDuration = 0.1,
 }: FastBlurTextProps) {
   return (
     <BlurText

@@ -33,6 +33,7 @@ export default function ExperiencePrimaryCard({
                   className="text-[1.1rem] leading-[1.34] font-normal tracking-normal text-black/82 dark:text-[#f7f8f4]"
                   key={point}
                   text={point}
+                  stepDuration={0.3}
                 />
               ))}
             </div>
