@@ -39,7 +39,7 @@ export const aboutMe: AboutMeDTO[] = [
     category: 'CURIOSITY',
     name: 'WHAT DRIVES ME',
     images: [
-      '/assets/life/travel8.jpg',
+      '/assets/life/grad.jpeg',
       '/assets/life/travel2.jpeg',
       '/assets/life/cat3.jpg',
       '/assets/life/travel6.jpg',
