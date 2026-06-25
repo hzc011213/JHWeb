@@ -29,7 +29,7 @@ export const aboutMe: AboutMeDTO[] = [
     number: '02',
     category: 'PHILOSOPHY',
     name: 'HOW I THINK',
-    images: ['/assets/designs/avp-pod.png'],
+    images: ['/assets/design/avp-pod.png'],
     description:
       'I think in systems first: what the person needs, what the product should make obvious, and where the smallest technical choice can make the whole experience feel calmer.',
     arrangement: 'with-description',

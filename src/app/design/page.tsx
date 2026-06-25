@@ -33,7 +33,7 @@ export default function DesignPage() {
       >
         <div className="relative mx-auto w-full max-w-245 overflow-hidden">
           <Image
-            src="/assets/designs/avp.png"
+            src="/assets/design/avp.png"
             alt="AVP visual identity displayed across large city billboards"
             width={1400}
             height={788}
@@ -66,7 +66,7 @@ export default function DesignPage() {
         <div className="mx-auto grid w-full max-w-340 gap-10 sm:gap-12 lg:gap-16">
           <div className="mx-auto w-full max-w-285">
             <Image
-              src="/assets/designs/avp-pod.svg"
+              src="/assets/design/avp-pod.svg"
               alt="AVP product design shown across pod and mobile layouts"
               width={2038}
               height={1181}
@@ -78,7 +78,7 @@ export default function DesignPage() {
 
           <div className="grid w-full grid-cols-1 items-start gap-10 sm:gap-12 md:grid-cols-2 lg:gap-16">
             <Image
-              src="/assets/designs/avp-popmart1.svg"
+              src="/assets/design/avp-popmart1.svg"
               alt="AVP Pop Mart design exploration with featured product sections"
               width={1280}
               height={1997}
@@ -86,7 +86,7 @@ export default function DesignPage() {
               className="h-auto w-full"
             />
             <Image
-              src="/assets/designs/avp-popmart4.svg"
+              src="/assets/design/avp-popmart4.svg"
               alt="AVP Pop Mart detail page design exploration"
               width={1029}
               height={1192}
@@ -97,7 +97,7 @@ export default function DesignPage() {
 
           <div className="grid w-full grid-cols-1 items-start gap-10 sm:gap-12 md:grid-cols-2 lg:gap-16">
             <Image
-              src="/assets/designs/avp-popmart3.svg"
+              src="/assets/design/avp-popmart3.svg"
               alt="AVP Pop Mart product page design exploration"
               width={1029}
               height={1325}
@@ -105,7 +105,7 @@ export default function DesignPage() {
               className="h-auto w-full"
             />
             <Image
-              src="/assets/designs/avp-popmart2.svg"
+              src="/assets/design/avp-popmart2.svg"
               alt="AVP Pop Mart catalog design exploration"
               width={1280}
               height={1909}

@@ -20,11 +20,11 @@ export const experiences: ExperienceDetailDTO[] = [
       'Developed an H5 web application used by 4000+ users, enabling real-time vehicle computing power sharing, reward systems, and security warnings.',
     ],
     images: [
-      '/assets/brand/nio-ad-desktop.mp4',
-      '/assets/brand/nio-et5-desktop.jpg',
-      '/assets/brand/nio-et5t-desktop.jpg',
-      '/assets/brand/nio-et9-desktop.jpg',
-      '/assets/brand/nio-et5-desktop.jpg',
+      '/assets/experience/nio-ad-desktop.mp4',
+      '/assets/experience/nio-et5-desktop.jpg',
+      '/assets/experience/nio-et5t-desktop.jpg',
+      '/assets/experience/nio-et9-desktop.jpg',
+      '/assets/experience/nio-et5-desktop.jpg',
     ],
   },
   {

@@ -36,7 +36,7 @@ const brandLogos: LogoItem[] = [
   {
     node: brandLogoNode(
       'Hyperduality',
-      '/assets/brand/hyperduality-logo.svg',
+      '/assets/experience/hyperduality-logo.svg',
       232,
       40,
       'dark-source',
@@ -50,7 +50,7 @@ const brandLogos: LogoItem[] = [
   {
     node: brandLogoNode(
       'Leadvisor',
-      '/assets/brand/leadvisor-logo.svg',
+      '/assets/experience/leadvisor-logo.svg',
       133,
       40,
       'color',
@@ -60,7 +60,7 @@ const brandLogos: LogoItem[] = [
   {
     node: brandLogoNode(
       'NIO',
-      '/assets/brand/nio-logo-white.svg',
+      '/assets/experience/nio-logo-white.svg',
       112,
       40,
       'light-source',
@@ -68,7 +68,7 @@ const brandLogos: LogoItem[] = [
     title: 'NIO',
   },
   {
-    src: '/assets/brand/shopee-logo.svg',
+    src: '/assets/experience/shopee-logo.svg',
     alt: 'Shopee',
     width: 128,
     height: 40,
