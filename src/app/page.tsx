@@ -4,6 +4,7 @@ import { useRef, type ComponentType } from 'react';
 import { useScroll } from 'framer-motion';
 
 import BrandCarousel from '@/components/home/BrandCarousel';
+import ContactCard from '@/components/home/ContactCard';
 import PortraitGallery from '@/components/home/PortraitGallery';
 import StackCard from '@/components/home/StackCard';
 import { aboutMe } from '@/data/aboutMe';
@@ -107,6 +108,7 @@ export default function Home() {
               />
             ))}
           </div>
+          <ContactCard />
         </div>
       </section>
     </main>

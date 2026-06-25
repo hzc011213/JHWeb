@@ -17,7 +17,7 @@ export const contacts: ContactDTO[] = [
   },
   {
     name: 'Email',
-    link: 'https://twitter.com',
+    link: 'mailto:hzc011213@gmail.com',
     logo: '/assets/logo/mail.png',
   },
 ];
