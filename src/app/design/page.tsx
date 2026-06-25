@@ -48,17 +48,17 @@ export default function DesignPage() {
         <div className="max-w-360-cols-1 mx-auto mb-16 grid w-full gap-16 md:mb-20 md:gap-20 lg:mb-24 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)]">
           <div>
             <h2 className="mt-7 max-w-115 text-[clamp(2.35rem,4.1vw,4.45rem)] leading-[0.97] font-semibold tracking-normal text-balance">
-              My highlights.{' '}
-              <span className="block text-[#8d8f8a]">
-                Recent projects I&apos;m proud of.
-              </span>
+              Virtual Blind Box Ecosystem.
             </h2>
           </div>
 
           <div className="flex items-start lg:pt-4">
             <p className="max-w-97.5 text-[clamp(1.35rem,1.85vw,2.3rem)] leading-[1.1] font-medium tracking-normal text-pretty text-[#f4f3ee]">
-              Concepts and designs for projects currently awaiting{' '}
-              <span className="text-[#8c9189]">implementation.</span>
+              Collectible figures, themed Pods, and AR companion experiences
+              across{' '}
+              <span className="text-[#8c9189]">
+                Apple Vision Pro, iOS, and Web.
+              </span>
             </p>
           </div>
         </div>
