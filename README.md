@@ -1,7 +1,6 @@
 # JHWeb
 
-Personal portfolio built with Next.js, TypeScript, Tailwind CSS, MDX, and
-Vercel.
+Personal portfolio built with Next.js, TypeScript, Tailwind CSS, and Vercel.
 
 ## Scripts
 
@@ -21,9 +20,6 @@ npm run dev
 ```
 
 Then open http://localhost:3000.
-
-MDX pages are enabled through `@next/mdx`. See
-`src/app/writing/hello/page.mdx` for a starter writing page.
 
 ## Deploy
 

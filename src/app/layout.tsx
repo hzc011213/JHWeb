@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'JH | Portfolio',
   description:
-    'Personal portfolio built with Next.js, TypeScript, Tailwind CSS, and MDX.',
+    'Personal portfolio built with Next.js, TypeScript, and Tailwind CSS.',
 };
 
 export default function RootLayout({
