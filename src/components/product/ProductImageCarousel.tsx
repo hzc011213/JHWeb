@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import Carousel, { type CarouselItem } from '@/components/react-bits/Carousel';
 
-import type { ProductImageAsset } from '../react-bits/ProductCard';
+import type { ProductImageAsset } from '@/data/products';
 import './ProductImageCarousel.css';
 
 type ProductImageCarouselProps = {
